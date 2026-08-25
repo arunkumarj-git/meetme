@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Arun Kumar J — Linux Production Support</title>
+    <title>Arun Kumar J | Linux Production Support Engineer</title>
     <meta name="description" content="Arun Kumar J - Linux Administrator with 4+ years of production support, application deployment, Linux administration and DevOps learning experience.">
 
     <!-- Bootstrap CSS -->
@@ -267,6 +267,144 @@ footer { background:#171717!important; }
 }
 </style>
 
+
+<style>
+/* ===== FULL PORTFOLIO REDESIGN ===== */
+html { scroll-behavior:smooth; }
+body { background:#f5f6f8 !important; color:#17202a !important; font-family:Arial,Helvetica,sans-serif !important; }
+.container { max-width:1120px !important; }
+
+/* Navigation */
+.navbar { background:#ffffff !important; border-bottom:1px solid #e8eaed !important; box-shadow:0 3px 15px rgba(20,30,40,.04) !important; }
+.navbar .nav-link { color:#1f2933 !important; font-size:11px !important; font-weight:800 !important; letter-spacing:1px !important; }
+.navbar .nav-link:hover,.navbar .active .nav-link { color:#0b7285 !important; }
+
+/* Hero */
+.resume-hero {
+  min-height:650px !important;
+  background:#eef3f5 !important;
+  display:flex !important;
+  align-items:center !important;
+  border-bottom:1px solid #dfe6e9 !important;
+  position:relative !important;
+  overflow:hidden !important;
+}
+.resume-hero:after {
+  content:"";
+  position:absolute; width:500px; height:500px; border-radius:50%;
+  right:-180px; top:-180px; border:70px solid rgba(11,114,133,.06);
+}
+.resume-hero-grid {
+  display:grid !important; grid-template-columns:1.25fr .75fr; gap:70px;
+  align-items:center; min-height:650px; position:relative; z-index:2;
+}
+.available {
+  display:inline-flex; align-items:center; gap:8px; padding:8px 12px;
+  background:#fff; border:1px solid #d8e2e6; color:#0b7285;
+  font-size:10px; font-weight:800; letter-spacing:1.5px; margin-bottom:25px;
+}
+.available span { width:7px; height:7px; background:#16a34a; border-radius:50%; }
+.hero-role-label { color:#0b7285 !important; font-size:12px !important; letter-spacing:2px !important; font-weight:800 !important; margin-bottom:14px !important; }
+.resume-hero-main h1 {
+  color:#14212b !important; font-size:clamp(58px,7vw,92px) !important;
+  line-height:.95 !important; font-weight:800 !important; letter-spacing:-4px !important;
+  margin:0 0 18px !important;
+}
+.hero-position { color:#33434d !important; font-size:23px !important; font-weight:600 !important; margin-bottom:20px !important; }
+.hero-position b { color:#0b7285 !important; padding:0 8px; }
+.hero-summary { max-width:680px; color:#69757e !important; font-size:16px !important; line-height:1.8 !important; margin-bottom:30px !important; }
+.hero-buttons { display:flex; gap:10px; flex-wrap:wrap; }
+.hero-btn-dark,.hero-btn-light {
+  padding:14px 22px; font-size:12px; font-weight:800; letter-spacing:.7px; text-decoration:none !important;
+}
+.hero-btn-dark { background:#14212b; color:#fff !important; }
+.hero-btn-light { border:1px solid #c9d3d8; color:#14212b !important; background:#fff; }
+.hero-btn-dark:hover { background:#0b7285; }
+.identity-card {
+  background:#14212b; color:#fff; padding:30px; border-radius:3px;
+  box-shadow:22px 22px 0 #0b7285; position:relative;
+}
+.identity-top { display:flex; gap:16px; align-items:center; padding-bottom:25px; border-bottom:1px solid rgba(255,255,255,.12); }
+.initials {
+  width:68px; height:68px; background:#eab308; color:#14212b; display:flex;
+  align-items:center; justify-content:center; font-weight:900; font-size:18px;
+}
+.identity-top small { color:#8fa2ad; font-size:9px; letter-spacing:1.5px; }
+.identity-top h3 { color:#fff !important; margin:7px 0 0 !important; font-size:21px !important; }
+.identity-row { display:flex; justify-content:space-between; gap:15px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.09); font-size:12px; }
+.identity-row span { color:#8fa2ad; }
+.identity-row strong { color:#f2f5f6; text-align:right; }
+.identity-bottom { display:flex; justify-content:space-between; padding-top:20px; color:#eab308; font-size:9px; letter-spacing:1.2px; font-weight:800; }
+
+/* Quick profile */
+.quick-profile { background:#fff !important; border-bottom:1px solid #e4e8ea; }
+.quick-grid { display:grid; grid-template-columns:repeat(5,1fr); }
+.quick-grid > div { padding:28px 20px; border-right:1px solid #e5e9eb; text-align:center; }
+.quick-grid > div:first-child { border-left:1px solid #e5e9eb; }
+.quick-grid strong { display:block; color:#14212b; font-size:24px; font-weight:800; }
+.quick-grid span { display:block; color:#78848c; font-size:10px; text-transform:uppercase; letter-spacing:1px; margin-top:5px; }
+
+/* Section headings */
+.section-heading-modern { margin-bottom:45px; }
+.section-heading-modern > span { color:#0b7285; font-size:10px; font-weight:800; letter-spacing:2px; }
+.section-heading-modern h2 { color:#14212b !important; font-size:42px !important; font-weight:800 !important; margin:12px 0 10px !important; letter-spacing:-1px !important; }
+.section-heading-modern p { color:#75818a; margin:0; max-width:650px; }
+.light-heading h2 { color:#fff !important; }
+.light-heading p { color:#9eacb4; }
+
+/* Skills */
+.skills-modern { background:#fff !important; }
+.skill-matrix { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid #dfe5e8; border-left:1px solid #dfe5e8; }
+.skill-column { min-height:245px; padding:28px; border-right:1px solid #dfe5e8; border-bottom:1px solid #dfe5e8; transition:.2s; }
+.skill-column:hover { background:#f4fafb; }
+.skill-index { color:#0b7285; font-size:10px; font-weight:800; letter-spacing:1px; }
+.skill-column h3 { color:#17232d !important; font-size:22px !important; margin:15px 0 10px !important; }
+.skill-column p { color:#0b7285 !important; font-weight:700; font-size:12px; margin-bottom:14px; }
+.skill-column small { color:#707d86; font-size:13px; line-height:1.7; display:block; }
+
+/* Work */
+.work-modern { background:#14212b !important; }
+.work-list { border-top:1px solid rgba(255,255,255,.12); }
+.work-row {
+  display:grid; grid-template-columns:65px 1fr 230px; gap:25px; align-items:center;
+  padding:28px 0; border-bottom:1px solid rgba(255,255,255,.12);
+}
+.work-no { color:#eab308; font-size:12px; font-weight:900; }
+.work-content h3 { color:#fff !important; font-size:21px !important; margin:0 0 8px !important; }
+.work-content p { color:#9eacb4; margin:0; font-size:13px; line-height:1.7; }
+.work-tools { color:#eab308; font-size:10px; font-weight:800; letter-spacing:.7px; text-align:right; }
+
+/* About / Resume / Contact cleanup */
+#about { background:#f5f6f8 !important; }
+#about .profile-wrapper h3 { color:#14212b !important; }
+#about .profile-wrapper p { color:#66737c !important; }
+#resume { background:#fff !important; }
+#contact { background:#f5f6f8 !important; }
+
+/* Remove old template visual clutter */
+.counter-section, .single-counter, .testimonial-section { background:transparent; }
+#portfolio .job-project-card { box-shadow:none !important; }
+
+/* Responsive */
+@media (max-width:991px) {
+  .resume-hero-grid { grid-template-columns:1fr; padding:100px 0 80px; }
+  .resume-hero-side { display:none; }
+  .quick-grid { grid-template-columns:repeat(3,1fr); }
+  .quick-grid > div:nth-child(4), .quick-grid > div:nth-child(5) { border-top:1px solid #e5e9eb; }
+  .skill-matrix { grid-template-columns:repeat(2,1fr); }
+  .work-row { grid-template-columns:50px 1fr; }
+  .work-tools { grid-column:2; text-align:left; }
+}
+@media (max-width:575px) {
+  .resume-hero-main h1 { font-size:58px !important; letter-spacing:-3px !important; }
+  .hero-position { font-size:18px !important; }
+  .quick-grid { grid-template-columns:1fr 1fr; }
+  .quick-grid > div { border-left:0 !important; }
+  .skill-matrix { grid-template-columns:1fr; }
+  .section-heading-modern h2 { font-size:34px !important; }
+}
+</style>
+
 </head>
   <body>
 
@@ -336,44 +474,46 @@ footer { background:#171717!important; }
       <!-- Navbar End -->
 
       <!-- Hero Area Start -->
-<section id="hero-area" class="new-hero">
-  <div class="hero-no">01</div>
-  <div class="new-hero-grid">
-    <div class="new-hero-main">
-      <div class="availability"><span></span> AVAILABLE FOR LINUX / DEVOPS OPPORTUNITIES</div>
-      <p class="intro-label">PRODUCTION SYSTEMS · INFRASTRUCTURE · AUTOMATION</p>
-      <h1>Keeping<br><em>production</em><br>running.</h1>
-      <p class="new-hero-text">
-        I'm <strong>Arun Kumar J</strong>, a Linux Production Support professional with
-        4+ years of experience in server administration, application support,
-        MySQL and production troubleshooting.
-      </p>
-      <div class="new-hero-actions">
-        <a href="#resume" class="new-primary-btn">VIEW EXPERIENCE <span>↗</span></a>
-        <a href="#contact" class="new-text-btn">GET IN TOUCH <span>→</span></a>
+<section id="hero-area" class="resume-hero">
+  <div class="container">
+    <div class="resume-hero-grid">
+      <div class="resume-hero-main">
+        <div class="available"><span></span> OPEN TO LINUX / DEVOPS OPPORTUNITIES</div>
+        <p class="hero-role-label">LINUX PRODUCTION SUPPORT ENGINEER</p>
+        <h1>Arun Kumar J</h1>
+        <p class="hero-position">Linux Administrator <b>·</b> Application Support <b>·</b> MySQL</p>
+        <p class="hero-summary">
+          4+ years of hands-on experience supporting Linux production environments,
+          application deployments, databases, monitoring and operational troubleshooting.
+          Currently building deeper skills in DevOps and automation.
+        </p>
+        <div class="hero-buttons">
+          <a href="#resume" class="hero-btn-dark">View Experience</a>
+          <a href="#contact" class="hero-btn-light">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="resume-hero-side">
+        <div class="identity-card">
+          <div class="identity-top">
+            <div class="initials">AKJ</div>
+            <div>
+              <small>PROFESSIONAL PROFILE</small>
+              <h3>Linux Administrator</h3>
+            </div>
+          </div>
+          <div class="identity-row"><span>Primary</span><strong>Linux Production Support</strong></div>
+          <div class="identity-row"><span>Database</span><strong>MySQL Administration</strong></div>
+          <div class="identity-row"><span>Application</span><strong>Apache / Tomcat</strong></div>
+          <div class="identity-row"><span>Monitoring</span><strong>Zabbix</strong></div>
+          <div class="identity-row"><span>Learning</span><strong>DevOps &amp; Automation</strong></div>
+          <div class="identity-bottom">
+            <span>4+ YEARS EXPERIENCE</span>
+            <span>INDIA</span>
+          </div>
+        </div>
       </div>
     </div>
-
-    <aside class="new-hero-side">
-      <div class="role-card">
-        <div class="role-card-top">
-          <span>PROFILE / 2026</span>
-          <span>INDIA</span>
-        </div>
-        <div class="role-big">04<span>+</span></div>
-        <div class="role-caption">YEARS OF<br>EXPERIENCE</div>
-        <div class="role-divider"></div>
-        <div class="role-list">
-          <div><span>01</span> LINUX ADMINISTRATION</div>
-          <div><span>02</span> PRODUCTION SUPPORT</div>
-          <div><span>03</span> APPLICATION DEPLOYMENT</div>
-          <div><span>04</span> DEVOPS LEARNING</div>
-        </div>
-      </div>
-      <div class="hero-stack-mini">
-        <span>LINUX</span><span>MYSQL</span><span>TOMCAT</span><span>ZABBIX</span>
-      </div>
-    </aside>
   </div>
 </section>
 <!-- Hero Area End -->
@@ -424,92 +564,44 @@ footer { background:#171717!important; }
     <!-- About Section End -->
 
     <!-- Skills Section Start -->
-<section id="services" class="services section-padding">
+<section id="services" class="skills-modern section-padding">
   <div class="container">
-    <h2 class="section-title wow flipInX" data-wow-delay="0.2s">Technical Skills</h2>
-    <p class="section-subtitle">Production-ready skills and technologies</p>
-    <div class="row">
-
-      <div class="col-md-6 col-lg-3 col-xs-12">
-        <div class="services-item skill-card">
-          <div class="icon"><i class="icon-settings"></i></div>
-          <div class="services-content">
-            <h3>Linux Administration</h3>
-            <p>RHEL, CentOS, Ubuntu, Debian, server installation, configuration, users/groups, filesystem and disk management.</p>
-          </div>
-        </div>
+    <div class="section-heading-modern">
+      <span>02 / CAPABILITIES</span>
+      <h2>Technical Skills</h2>
+      <p>Tools and technologies used across production support and infrastructure operations.</p>
+    </div>
+    <div class="skill-matrix">
+      <div class="skill-column">
+        <div class="skill-index">01</div><h3>Linux</h3>
+        <p>RHEL · CentOS · Ubuntu · Debian</p>
+        <small>Server installation, configuration, users, groups, filesystem and disk management.</small>
       </div>
-
-      <div class="col-md-6 col-lg-3 col-xs-12">
-        <div class="services-item skill-card">
-          <div class="icon"><i class="icon-layers"></i></div>
-          <div class="services-content">
-            <h3>Application Support</h3>
-            <p>Apache, Tomcat, JAR/WAR deployment, application logs, Java heap configuration and production troubleshooting.</p>
-          </div>
-        </div>
+      <div class="skill-column">
+        <div class="skill-index">02</div><h3>Applications</h3>
+        <p>Apache · Tomcat · Java</p>
+        <small>JAR/WAR deployment, upgrades, heap settings, logs and production troubleshooting.</small>
       </div>
-
-      <div class="col-md-6 col-lg-3 col-xs-12">
-        <div class="services-item skill-card">
-          <div class="icon"><i class="icon-database"></i></div>
-          <div class="services-content">
-            <h3>MySQL Administration</h3>
-            <p>Installation, configuration, users and privileges, backups, recovery, monitoring, troubleshooting and query tuning.</p>
-          </div>
-        </div>
+      <div class="skill-column">
+        <div class="skill-index">03</div><h3>MySQL</h3>
+        <p>Database Administration</p>
+        <small>Installation, configuration, users, privileges, backup, recovery and monitoring.</small>
       </div>
-
-      <div class="col-md-6 col-lg-3 col-xs-12">
-        <div class="services-item skill-card">
-          <div class="icon"><i class="icon-energy"></i></div>
-          <div class="services-content">
-            <h3>Shell &amp; Automation</h3>
-            <p>Bash/Shell scripting for service control, operational tasks and daily, weekly and monthly database backups.</p>
-          </div>
-        </div>
+      <div class="skill-column">
+        <div class="skill-index">04</div><h3>Monitoring</h3>
+        <p>Zabbix · Logs · Performance</p>
+        <small>CPU, disk I/O, service health, application logs and incident analysis.</small>
       </div>
-
-      <div class="col-md-6 col-lg-3 col-xs-12">
-        <div class="services-item skill-card">
-          <div class="icon"><i class="icon-chart"></i></div>
-          <div class="services-content">
-            <h3>Monitoring</h3>
-            <p>Zabbix, CPU and disk I/O monitoring, application log monitoring and production issue analysis.</p>
-          </div>
-        </div>
+      <div class="skill-column">
+        <div class="skill-index">05</div><h3>Infrastructure</h3>
+        <p>HAProxy · Nginx · Redis · RabbitMQ</p>
+        <small>Configuration and production infrastructure support for application environments.</small>
       </div>
-
-      <div class="col-md-6 col-lg-3 col-xs-12">
-        <div class="services-item skill-card">
-          <div class="icon"><i class="icon-shuffle"></i></div>
-          <div class="services-content">
-            <h3>Load Balancing</h3>
-            <p>HAProxy and Nginx configuration, subdomains, traffic handling and production infrastructure support.</p>
-          </div>
-        </div>
+      <div class="skill-column">
+        <div class="skill-index">06</div><h3>Automation</h3>
+        <p>Shell · Bash · DevOps</p>
+        <small>Operational scripting, database backup automation and ongoing DevOps learning.</small>
       </div>
-
-      <div class="col-md-6 col-lg-3 col-xs-12">
-        <div class="services-item skill-card">
-          <div class="icon"><i class="icon-lock"></i></div>
-          <div class="services-content">
-            <h3>SSL / Security</h3>
-            <p>SSL/TLS, JKS, CSR generation, Tomcat SSL configuration and certificate management.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 col-xs-12">
-        <div class="services-item skill-card">
-          <div class="icon"><i class="icon-cloud-upload"></i></div>
-          <div class="services-content">
-            <h3>DevOps</h3>
-            <p>Currently learning DevOps practices and automation with a focus on reliable deployments and infrastructure operations.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -572,69 +664,55 @@ footer { background:#171717!important; }
           </div>
 
           <!-- Projects Section Start -->
-<section id="portfolio" class="section-padding" style="padding:85px 0 !important; background:#f7f9fb !important; display:block !important; visibility:visible !important; opacity:1 !important;">
+<section id="portfolio" class="work-modern section-padding">
   <div class="container">
-    <div style="text-align:center; margin-bottom:45px;">
-      <h2 class="section-title" style="margin-bottom:10px;">Projects &amp; Production Work</h2>
-      <p style="color:#777;">Hands-on Linux, application support, database and infrastructure work</p>
+    <div class="section-heading-modern light-heading">
+      <span>04 / SELECTED WORK</span>
+      <h2>Production Projects</h2>
+      <p>Practical responsibilities across Linux, applications, databases and infrastructure.</p>
     </div>
 
-    <div class="row">
-
-      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
-        <div class="job-project-card">
-          <span class="project-number">01</span>
+    <div class="work-list">
+      <article class="work-row">
+        <div class="work-no">01</div>
+        <div class="work-content">
           <h3>Linux Production Support</h3>
-          <p>Production server administration, L2 ticket handling, troubleshooting, log analysis, release support and root-cause analysis.</p>
-          <div class="project-tags"><span>RHEL</span><span>CentOS</span><span>Ubuntu</span><span>SSH</span></div>
+          <p>Linux production server administration, L2 troubleshooting, release support, log analysis and root-cause investigation.</p>
         </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
-        <div class="job-project-card">
-          <span class="project-number">02</span>
-          <h3>Apache &amp; Tomcat Application Deployment</h3>
-          <p>JAR, WAR and class-file deployments, Tomcat upgrades, Java heap tuning, application log analysis and SSL/JKS configuration.</p>
-          <div class="project-tags"><span>Apache</span><span>Tomcat</span><span>Java</span><span>JKS</span></div>
+        <div class="work-tools">RHEL / CentOS / Ubuntu</div>
+      </article>
+      <article class="work-row">
+        <div class="work-no">02</div>
+        <div class="work-content">
+          <h3>Apache &amp; Tomcat Application Support</h3>
+          <p>Application deployment, Tomcat upgrades, JAR/WAR handling, Java configuration, application logs and SSL/JKS.</p>
         </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
-        <div class="job-project-card">
-          <span class="project-number">03</span>
+        <div class="work-tools">Apache / Tomcat / Java</div>
+      </article>
+      <article class="work-row">
+        <div class="work-no">03</div>
+        <div class="work-content">
           <h3>MySQL Administration &amp; Backup</h3>
-          <p>MySQL installation, user and privilege management, database backup/recovery, monitoring, troubleshooting and query tuning.</p>
-          <div class="project-tags"><span>MySQL</span><span>Backup</span><span>Recovery</span><span>SQL</span></div>
+          <p>MySQL installation, configuration, user and privilege management, backup/recovery, monitoring and troubleshooting.</p>
         </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
-        <div class="job-project-card">
-          <span class="project-number">04</span>
-          <h3>Monitoring &amp; Production Operations</h3>
-          <p>Zabbix monitoring, CPU/disk I/O monitoring, application logs, incident investigation and operational health checks.</p>
-          <div class="project-tags"><span>Zabbix</span><span>Logs</span><span>Monitoring</span></div>
+        <div class="work-tools">MySQL / SQL / Backup</div>
+      </article>
+      <article class="work-row">
+        <div class="work-no">04</div>
+        <div class="work-content">
+          <h3>Monitoring &amp; Infrastructure Operations</h3>
+          <p>Zabbix monitoring, CPU/disk checks, HAProxy and Nginx configuration, Redis and RabbitMQ administration.</p>
         </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
-        <div class="job-project-card">
-          <span class="project-number">05</span>
-          <h3>HAProxy, Nginx &amp; Messaging</h3>
-          <p>HAProxy and Nginx configuration, subdomains, SSL certificates, Redis and RabbitMQ configuration for application environments.</p>
-          <div class="project-tags"><span>HAProxy</span><span>Nginx</span><span>Redis</span><span>RabbitMQ</span></div>
+        <div class="work-tools">Zabbix / Nginx / HAProxy</div>
+      </article>
+      <article class="work-row">
+        <div class="work-no">05</div>
+        <div class="work-content">
+          <h3>Shell Automation &amp; DevOps Learning</h3>
+          <p>Shell scripting for operational tasks and recurring database backups, with an ongoing focus on DevOps automation.</p>
         </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
-        <div class="job-project-card">
-          <span class="project-number">06</span>
-          <h3>DevOps &amp; Automation</h3>
-          <p>Currently learning DevOps practices and automation to improve deployment workflows, repeatable operations and infrastructure efficiency.</p>
-          <div class="project-tags"><span>DevOps</span><span>Automation</span><span>Shell</span></div>
-        </div>
-      </div>
-
+        <div class="work-tools">Bash / Shell / DevOps</div>
+      </article>
     </div>
   </div>
 </section>
