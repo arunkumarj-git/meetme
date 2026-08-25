@@ -407,6 +407,22 @@
 }
 </style>
 
+
+<style>
+/* Clean one-page navigation: no profile-name brand */
+.navbar .onepage-nev {
+  justify-content: flex-end !important;
+}
+.navbar .onepage-nev .nav-item {
+  margin-left: 8px !important;
+}
+@media (max-width: 991px) {
+  .navbar .onepage-nev {
+    justify-content: flex-start !important;
+  }
+}
+</style>
+
 </head>
   <body>
 
@@ -424,28 +440,29 @@
               <span class="icon-menu"></span>
             </button>
 
-            <a href="index.html" class="navbar-brand"
-   style="display:flex; align-items:center; width:260px; height:70px; text-decoration:none; font-family:Arial, sans-serif;">
-
-    <svg width="45" height="45" viewBox="0 0 64 64" style="margin-right:12px;">
-        <circle cx="32" cy="32" r="30" fill="#1fb6c9"/>
-        <circle cx="32" cy="24" r="7" fill="white"/>
-        <path d="M18 46c0-8 8-12 14-12s14 4 14 12" fill="white"/>
-    </svg>
-
-    <span style="font-size:25px; color:#1fb6c9; font-weight:700; letter-spacing:.2px;">Arun Kumar J</span>
-
-</a>
+            
           </div>
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
-              <li class="nav-item active"><a class="nav-link" href="#hero-area">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="#services">Skills</a></li>
-              <li class="nav-item"><a class="nav-link" href="#resume">Experience</a></li>
-              <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            </ul>
+  <li class="nav-item active">
+    <a class="nav-link" href="#hero-area">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#about">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#services">Skills</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#resume">Experience</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#portfolio">Projects</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#contact">Contact</a>
+  </li>
+</ul>
           </div>
         </div>
 
