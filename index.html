@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Arun Kumar J | Linux Administrator | DevOps &amp; Production Support</title>
+    <title>Arun Kumar J | Linux Administrator | Production Support | DevOps</title>
     <meta name="description" content="Arun Kumar J - Linux Administrator with 4+ years of production support, application deployment, Linux administration and DevOps learning experience.">
 
     <!-- Bootstrap CSS -->
@@ -308,6 +308,105 @@
 }
 </style>
 
+
+<style>
+.section-subtitle {
+  text-align:center !important;
+  color:#777 !important;
+  margin:-35px auto 35px !important;
+}
+.skill-card {
+  min-height:265px !important;
+  background:#fff !important;
+  border:1px solid #edf0f2 !important;
+  box-shadow:0 8px 24px rgba(0,0,0,.05) !important;
+  transition:transform .2s ease, box-shadow .2s ease !important;
+}
+.skill-card:hover {
+  transform:translateY(-5px) !important;
+  box-shadow:0 14px 30px rgba(0,0,0,.09) !important;
+}
+.job-project-card {
+  position:relative !important;
+  min-height:285px !important;
+  padding:34px 28px 27px !important;
+  background:#fff !important;
+  border:1px solid #e9eef1 !important;
+  border-radius:8px !important;
+  box-shadow:0 8px 25px rgba(16,47,61,.06) !important;
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  transition:transform .2s ease, box-shadow .2s ease !important;
+}
+.job-project-card:hover {
+  transform:translateY(-5px) !important;
+  box-shadow:0 15px 35px rgba(16,47,61,.11) !important;
+}
+.job-project-card h3 {
+  margin:18px 0 14px !important;
+  color:#1d2b34 !important;
+  font-size:20px !important;
+  line-height:1.35 !important;
+  font-weight:700 !important;
+}
+.job-project-card p {
+  margin:0 0 20px !important;
+  color:#68757c !important;
+  line-height:1.7 !important;
+  font-size:14px !important;
+}
+.project-number {
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:38px !important;
+  height:38px !important;
+  border-radius:50% !important;
+  background:rgba(31,182,201,.10) !important;
+  color:#1aa5b7 !important;
+  font-size:12px !important;
+  font-weight:800 !important;
+}
+.project-tags {
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:7px !important;
+}
+.project-tags span {
+  padding:5px 9px !important;
+  border-radius:14px !important;
+  background:#f1f7f8 !important;
+  color:#4c6872 !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+}
+@media (max-width:767px) {
+  .job-project-card, .skill-card {
+    min-height:auto !important;
+  }
+}
+</style>
+
+
+<style>
+.core-stack {
+  display:flex !important;
+  flex-wrap:wrap !important;
+  justify-content:center !important;
+  gap:9px !important;
+}
+.core-stack span {
+  color:rgba(255,255,255,.82) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  background:rgba(255,255,255,.04) !important;
+  border-radius:20px !important;
+  padding:8px 13px !important;
+  font-size:12px !important;
+  font-weight:600 !important;
+}
+</style>
+
 </head>
   <body>
 
@@ -334,40 +433,18 @@
         <path d="M18 46c0-8 8-12 14-12s14 4 14 12" fill="white"/>
     </svg>
 
-    <span style="font-size:30px; color:#1fb6c9; font-weight:500;">
-        Pro<span style="font-weight:700;">file</span>
-    </span>
+    <span style="font-size:25px; color:#1fb6c9; font-weight:700; letter-spacing:.2px;">Arun Kumar J</span>
 
 </a>
           </div>
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
-              <li class="nav-item active">
-                <a class="nav-link" href="#hero-area">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">
-                  About
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#services">
-                  Services
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#resume">
-                  Resume
-                </a>
-              </li>
-         
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">
-                  Contact
-                </a>
-              </li>
+              <li class="nav-item active"><a class="nav-link" href="#hero-area">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#services">Skills</a></li>
+              <li class="nav-item"><a class="nav-link" href="#resume">Experience</a></li>
+              <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -496,123 +573,128 @@
           </div> 
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">
-              <h3>Hi Guys!</h3>
-              <p>Linux Administrator | Production & Application Support
-Experienced Linux Administrator with over 4+ years of expertise in managing
-production environments and application support. Proficient in Linux server
-installation, configuration, and application deployment across various
-distributions. Skilled in database administration, shell scripting, and
-performance optimization to ensure system reliability and uptime. Adept at
-troubleshooting complex issues, automating routine tasks, and
-implementing security best practices. Passionate about streamlining
-infrastructure through automation and performance tuning toimprove
-operational efficiency.</p>
+              <h3>Linux Production Support Engineer</h3>
+              <p>
+                Linux Administrator with 4+ years of production support experience.
+                Skilled in Linux server administration, Apache/Tomcat application deployment,
+                MySQL administration, Shell scripting, Zabbix monitoring, HAProxy/Nginx,
+                Redis, RabbitMQ and SSL/JKS certificate management.
+                Experienced in L2 troubleshooting, release activities, log analysis,
+                backup automation and production incident support. Currently learning
+                DevOps practices and automation.
+              </p>
               <div class="about-profile">
                 <ul class="admin-profile">
-                  <li><span class="pro-title"> Name </span> <span class="pro-detail">Arun Kumar J</span></li>
-                  <li><span class="pro-title"> Age </span> <span class="pro-detail">25 Years</span></li>
-                  <li><span class="pro-title"> Experience </span> <span class="pro-detail">4+ Years</span></li>
-                  <li><span class="pro-title"> Country </span> <span class="pro-detail">india</span></li>
-                  <li><span class="pro-title"> Location </span> <span class="pro-detail">Madurai, Tamil Nadu, India</span></li>
-                  <li><span class="pro-title"> e-mail </span> <span class="pro-detail">arunkumarjcv@gmail.com</span></li>
-                  <li><span class="pro-title"> Freelance </span> <span class="pro-detail">Available</span></li>
+                  <li><span class="pro-title">Name</span><span class="pro-detail">Arun Kumar J</span></li>
+                  <li><span class="pro-title">Role</span><span class="pro-detail">Linux Production Support</span></li>
+                  <li><span class="pro-title">Experience</span><span class="pro-detail">4+ Years</span></li>
+                  <li><span class="pro-title">Current Focus</span><span class="pro-detail">DevOps &amp; Automation</span></li>
+                  <li><span class="pro-title">Location</span><span class="pro-detail">Tamil Nadu, India</span></li>
+                  <li><span class="pro-title">Email</span><span class="pro-detail">arunkumarjcv@gmail.com</span></li>
                 </ul>
               </div>
-              <a href="assets/Arunkumar_Linux_Resume.pdf" class="btn btn-common" download><i class="icon-paper-clip"></i> Download Resume</a>
-              <section id="contact" class="section-padding">
-  <div class="container">
-    <h2>Contact Me</h2>
-
-    <div class="contact-info">
-
-      <p>
-        <i class="icon-envelope"></i>
-        Email: <a href="mailto:arunkumarjcv@gmail.com">arunkumarjcv@gmail.com</a>
-      </p>
-
-      <p>
-        <i class="icon-location-pin"></i>
-        Location: Madurai, Tamil Nadu, India
-      </p>
-
-      <p>
-        <i class="icon-social-github"></i>
-        GitHub:
-        <a href="https://github.com/arunkumarj-git" target="_blank">arunkumarj-git</a>
-      </p>
-      <p>
-        <i class="icon-social-linkedin"></i>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/arun-kumar-j-linux-production-support/" target="_blank">
-          Arun Kumar J
-        </a>
-      </p>
-
-         </div>
-         </div>
-          </div>   
+              <a href="assets/Arunkumar_Linux_Resume.pdf" class="btn btn-common" download>
+                <i class="icon-paper-clip"></i> Download Resume
+              </a>
+            </div>
+          </div>
+        </div>   
         </div>
       </div>
     </section>
     <!-- About Section End -->
 
-    <!-- Services Section Start -->
-    <section id="services" class="services section-padding">
-      <h2 class="section-title wow flipInX" data-wow-delay="0.4s">What I do</h2>
-      <div class="container">
-        <div class="row">
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-3 col-xs-12">
-            <div class="services-item wow fadeInDown" data-wow-delay="0.3s">
-              <div class="icon">
-                <i class="icon-grid"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Linux Server Administration</a></h3>
-                <p>Installation, configuration and management of Linux servers such as RHEL, CentOS, Ubuntu and Debian.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-3 col-xs-12">
-            <div class="services-item wow fadeInDown" data-wow-delay="0.6s">
-              <div class="icon">
-                <i class="icon-layers"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Application Deployment</a></h3>
-                <p>Deploy and manage applications using Apache, Tomcat and manage WAR, JAR deployments in production servers.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-3 col-xs-12">
-            <div class="services-item wow fadeInDown" data-wow-delay="0.9s">
-              <div class="icon">
-                <i class="icon-briefcase"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Database Administration</a></h3>
-                <p>MySQL installation, configuration, user management, backups and performance monitoring.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-3 col-xs-12">
-            <div class="services-item wow fadeInDown" data-wow-delay="1.2s">
-              <div class="icon">
-                <i class="icon-bubbles"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">System Monitoring & Security</a></h3>
-                <p>Monitoring servers using Zabbix, troubleshooting production issues and implementing security best practices.</p>
-              </div>
-            </div>
+    <!-- Skills Section Start -->
+<section id="services" class="services section-padding">
+  <div class="container">
+    <h2 class="section-title wow flipInX" data-wow-delay="0.2s">Technical Skills</h2>
+    <p class="section-subtitle">Production-ready skills and technologies</p>
+    <div class="row">
+
+      <div class="col-md-6 col-lg-3 col-xs-12">
+        <div class="services-item skill-card">
+          <div class="icon"><i class="icon-settings"></i></div>
+          <div class="services-content">
+            <h3>Linux Administration</h3>
+            <p>RHEL, CentOS, Ubuntu, Debian, server installation, configuration, users/groups, filesystem and disk management.</p>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Services Section End -->
+
+      <div class="col-md-6 col-lg-3 col-xs-12">
+        <div class="services-item skill-card">
+          <div class="icon"><i class="icon-layers"></i></div>
+          <div class="services-content">
+            <h3>Application Support</h3>
+            <p>Apache, Tomcat, JAR/WAR deployment, application logs, Java heap configuration and production troubleshooting.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 col-xs-12">
+        <div class="services-item skill-card">
+          <div class="icon"><i class="icon-database"></i></div>
+          <div class="services-content">
+            <h3>MySQL Administration</h3>
+            <p>Installation, configuration, users and privileges, backups, recovery, monitoring, troubleshooting and query tuning.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 col-xs-12">
+        <div class="services-item skill-card">
+          <div class="icon"><i class="icon-energy"></i></div>
+          <div class="services-content">
+            <h3>Shell &amp; Automation</h3>
+            <p>Bash/Shell scripting for service control, operational tasks and daily, weekly and monthly database backups.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 col-xs-12">
+        <div class="services-item skill-card">
+          <div class="icon"><i class="icon-chart"></i></div>
+          <div class="services-content">
+            <h3>Monitoring</h3>
+            <p>Zabbix, CPU and disk I/O monitoring, application log monitoring and production issue analysis.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 col-xs-12">
+        <div class="services-item skill-card">
+          <div class="icon"><i class="icon-shuffle"></i></div>
+          <div class="services-content">
+            <h3>Load Balancing</h3>
+            <p>HAProxy and Nginx configuration, subdomains, traffic handling and production infrastructure support.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 col-xs-12">
+        <div class="services-item skill-card">
+          <div class="icon"><i class="icon-lock"></i></div>
+          <div class="services-content">
+            <h3>SSL / Security</h3>
+            <p>SSL/TLS, JKS, CSR generation, Tomcat SSL configuration and certificate management.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 col-xs-12">
+        <div class="services-item skill-card">
+          <div class="icon"><i class="icon-cloud-upload"></i></div>
+          <div class="services-content">
+            <h3>DevOps</h3>
+            <p>Currently learning DevOps practices and automation with a focus on reliable deployments and infrastructure operations.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Skills Section End -->
 
     <!-- Resume Section Start -->
     <div id="resume" class="section-padding">
@@ -649,10 +731,10 @@ operational efficiency.</p>
                     <span>2022 - Present</span>
                     <p class="line-text">Provide daily production support, Linux server administration, application deployment, monitoring, troubleshooting, and release support.</p>
                   <ul>
-                  <li>Linux Server installation and configuration</li>
+                  <li>Linux server installation, configuration and maintenance</li>
                   <li>Apache & Tomcat deployment (WAR/JAR)</li>
                   <li>MySQL database administration</li>
-                  <li>Shell scripting automation</li>
+                  <li>Shell scripting and operational automation</li>
                   <li>Zabbix monitoring and performance tuning</li>
                   <li>HAProxy load balancer configuration</li>
                   <li>Redis and RabbitMQ configuration</li>
@@ -671,60 +753,66 @@ operational efficiency.</p>
           </div>
 
           <!-- Projects Section Start -->
-<section id="portfolio" class="section-padding" style="padding:80px 0 !important; background:#f7f7f7 !important; display:block !important; visibility:visible !important; opacity:1 !important; height:auto !important; overflow:visible !important;">
-  <div class="container" style="display:block !important; width:100% !important;">
+<section id="portfolio" class="section-padding" style="padding:85px 0 !important; background:#f7f9fb !important; display:block !important; visibility:visible !important; opacity:1 !important;">
+  <div class="container">
     <div style="text-align:center; margin-bottom:45px;">
-      <h2 style="font-size:32px; font-weight:700; margin:0 0 12px; color:#222; display:block !important; visibility:visible !important;">Projects</h2>
-      <p style="margin:0; color:#777; font-size:16px;">Linux Administration, Production Support &amp; DevOps</p>
+      <h2 class="section-title" style="margin-bottom:10px;">Projects &amp; Production Work</h2>
+      <p style="color:#777;">Hands-on Linux, application support, database and infrastructure work</p>
     </div>
 
-    <div style="display:flex !important; flex-wrap:wrap !important; gap:30px !important; width:100% !important;">
+    <div class="row">
 
-      <div style="flex:1 1 calc(33.333% - 20px) !important; min-width:280px !important; max-width:calc(33.333% - 20px) !important; margin:0 !important; display:block !important; visibility:visible !important; opacity:1 !important;">
-        <div style="background:#fff; min-height:250px; padding:35px 25px; text-align:center; border-radius:4px; box-shadow:0 2px 12px rgba(0,0,0,.08); display:block !important; visibility:visible !important;">
-          <div style="font-size:34px; margin-bottom:18px;">⚙️</div>
-          <h3 style="font-size:20px; font-weight:700; color:#333; margin:0 0 15px;">Linux Production Support</h3>
-          <p style="color:#777; line-height:1.7; margin:0;">Production server administration, L2 troubleshooting, release activities, log analysis, monitoring and root-cause analysis.</p>
+      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
+        <div class="job-project-card">
+          <span class="project-number">01</span>
+          <h3>Linux Production Support</h3>
+          <p>Production server administration, L2 ticket handling, troubleshooting, log analysis, release support and root-cause analysis.</p>
+          <div class="project-tags"><span>RHEL</span><span>CentOS</span><span>Ubuntu</span><span>SSH</span></div>
         </div>
       </div>
 
-      <div style="flex:1 1 calc(33.333% - 20px) !important; min-width:280px !important; max-width:calc(33.333% - 20px) !important; margin:0 !important; display:block !important; visibility:visible !important; opacity:1 !important;">
-        <div style="background:#fff; min-height:250px; padding:35px 25px; text-align:center; border-radius:4px; box-shadow:0 2px 12px rgba(0,0,0,.08); display:block !important; visibility:visible !important;">
-          <div style="font-size:34px; margin-bottom:18px;">🗂️</div>
-          <h3 style="font-size:20px; font-weight:700; color:#333; margin:0 0 15px;">Apache &amp; Tomcat Deployment</h3>
-          <p style="color:#777; line-height:1.7; margin:0;">JAR, WAR and class-file deployments, Tomcat upgrades, Java heap configuration, SSL/JKS and application log troubleshooting.</p>
+      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
+        <div class="job-project-card">
+          <span class="project-number">02</span>
+          <h3>Apache &amp; Tomcat Application Deployment</h3>
+          <p>JAR, WAR and class-file deployments, Tomcat upgrades, Java heap tuning, application log analysis and SSL/JKS configuration.</p>
+          <div class="project-tags"><span>Apache</span><span>Tomcat</span><span>Java</span><span>JKS</span></div>
         </div>
       </div>
 
-      <div style="flex:1 1 calc(33.333% - 20px) !important; min-width:280px !important; max-width:calc(33.333% - 20px) !important; margin:0 !important; display:block !important; visibility:visible !important; opacity:1 !important;">
-        <div style="background:#fff; min-height:250px; padding:35px 25px; text-align:center; border-radius:4px; box-shadow:0 2px 12px rgba(0,0,0,.08); display:block !important; visibility:visible !important;">
-          <div style="font-size:34px; margin-bottom:18px;">🗄️</div>
-          <h3 style="font-size:20px; font-weight:700; color:#333; margin:0 0 15px;">MySQL Administration</h3>
-          <p style="color:#777; line-height:1.7; margin:0;">MySQL installation, configuration, user and privilege management, database backups, recovery, monitoring and troubleshooting.</p>
+      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
+        <div class="job-project-card">
+          <span class="project-number">03</span>
+          <h3>MySQL Administration &amp; Backup</h3>
+          <p>MySQL installation, user and privilege management, database backup/recovery, monitoring, troubleshooting and query tuning.</p>
+          <div class="project-tags"><span>MySQL</span><span>Backup</span><span>Recovery</span><span>SQL</span></div>
         </div>
       </div>
 
-      <div style="flex:1 1 calc(33.333% - 20px) !important; min-width:280px !important; max-width:calc(33.333% - 20px) !important; margin:0 !important; display:block !important; visibility:visible !important; opacity:1 !important;">
-        <div style="background:#fff; min-height:250px; padding:35px 25px; text-align:center; border-radius:4px; box-shadow:0 2px 12px rgba(0,0,0,.08); display:block !important; visibility:visible !important;">
-          <div style="font-size:34px; margin-bottom:18px;">⌨️</div>
-          <h3 style="font-size:20px; font-weight:700; color:#333; margin:0 0 15px;">Shell Scripting &amp; Automation</h3>
-          <p style="color:#777; line-height:1.7; margin:0;">Bash/Shell scripts for service control and daily, weekly and monthly database backup automation.</p>
+      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
+        <div class="job-project-card">
+          <span class="project-number">04</span>
+          <h3>Monitoring &amp; Production Operations</h3>
+          <p>Zabbix monitoring, CPU/disk I/O monitoring, application logs, incident investigation and operational health checks.</p>
+          <div class="project-tags"><span>Zabbix</span><span>Logs</span><span>Monitoring</span></div>
         </div>
       </div>
 
-      <div style="flex:1 1 calc(33.333% - 20px) !important; min-width:280px !important; max-width:calc(33.333% - 20px) !important; margin:0 !important; display:block !important; visibility:visible !important; opacity:1 !important;">
-        <div style="background:#fff; min-height:250px; padding:35px 25px; text-align:center; border-radius:4px; box-shadow:0 2px 12px rgba(0,0,0,.08); display:block !important; visibility:visible !important;">
-          <div style="font-size:34px; margin-bottom:18px;">📊</div>
-          <h3 style="font-size:20px; font-weight:700; color:#333; margin:0 0 15px;">Monitoring &amp; Infrastructure</h3>
-          <p style="color:#777; line-height:1.7; margin:0;">Zabbix monitoring, CPU and disk I/O monitoring, HAProxy and Nginx configuration, Redis and RabbitMQ administration.</p>
+      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
+        <div class="job-project-card">
+          <span class="project-number">05</span>
+          <h3>HAProxy, Nginx &amp; Messaging</h3>
+          <p>HAProxy and Nginx configuration, subdomains, SSL certificates, Redis and RabbitMQ configuration for application environments.</p>
+          <div class="project-tags"><span>HAProxy</span><span>Nginx</span><span>Redis</span><span>RabbitMQ</span></div>
         </div>
       </div>
 
-      <div style="flex:1 1 calc(33.333% - 20px) !important; min-width:280px !important; max-width:calc(33.333% - 20px) !important; margin:0 !important; display:block !important; visibility:visible !important; opacity:1 !important;">
-        <div style="background:#fff; min-height:250px; padding:35px 25px; text-align:center; border-radius:4px; box-shadow:0 2px 12px rgba(0,0,0,.08); display:block !important; visibility:visible !important;">
-          <div style="font-size:34px; margin-bottom:18px;">☁️</div>
-          <h3 style="font-size:20px; font-weight:700; color:#333; margin:0 0 15px;">DevOps Learning &amp; Automation</h3>
-          <p style="color:#777; line-height:1.7; margin:0;">Currently learning DevOps practices and automation to improve deployment, infrastructure management and operational efficiency.</p>
+      <div class="col-md-6 col-lg-4" style="margin-bottom:30px;">
+        <div class="job-project-card">
+          <span class="project-number">06</span>
+          <h3>DevOps &amp; Automation</h3>
+          <p>Currently learning DevOps practices and automation to improve deployment workflows, repeatable operations and infrastructure efficiency.</p>
+          <div class="project-tags"><span>DevOps</span><span>Automation</span><span>Shell</span></div>
         </div>
       </div>
 
@@ -774,7 +862,20 @@ operational efficiency.</p>
     </section>
     <!-- Counter Area End-->
 
-    <!-- Contact Section Start -->
+    
+<section class="section-padding" style="padding:55px 0 !important; background:#102f3d !important;">
+  <div class="container" style="text-align:center;">
+    <h2 style="color:#fff !important; font-size:25px !important; margin-bottom:22px !important;">Core Technology Stack</h2>
+    <div class="core-stack">
+      <span>Linux</span><span>RHEL</span><span>CentOS</span><span>Ubuntu</span>
+      <span>Apache</span><span>Tomcat</span><span>MySQL</span><span>Bash</span>
+      <span>Zabbix</span><span>HAProxy</span><span>Nginx</span><span>Redis</span>
+      <span>RabbitMQ</span><span>SSL/TLS</span><span>JKS</span><span>GitHub</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section Start -->
     <section id="contact" class="section-padding">      
       <div class="contact-form">
         <div class="container">
