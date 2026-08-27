@@ -1,2647 +1,1265 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Required Meta Tags -->
-    <meta charset="utf-8">
+    <title>Arun Kumar J | Linux Production Support</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Arun Kumar J - Linux Production Support Engineer, Linux Administrator and DevOps enthusiast.">
 
-    <title>
-        Arun Kumar J | Linux Administrator | DevOps
-    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
+        :root {
+            --bg: #080b12;
+            --bg-light: #0e131d;
+            --card: #111722;
+            --border: #202938;
+            --primary: #00d9ff;
+            --primary-dark: #0099b5;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --green: #22c55e;
+        }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="assets/css/bootstrap.min.css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
 
-    <!-- Fonts -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="assets/fonts/font-awesome.min.css">
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    <!-- Simple Line Icons -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="assets/fonts/simple-line-icons.css">
+        ul {
+            list-style: none;
+        }
 
-    <!-- Slicknav -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="assets/css/slicknav.css">
+        /* ================= NAVBAR ================= */
 
-    <!-- Menu CSS -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="assets/css/menu_sideslide.css">
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background: rgba(8, 11, 18, 0.92);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
 
-    <!-- Slider CSS -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="assets/css/slide-style.css">
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
 
-    <!-- Nivo Lightbox -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="assets/css/nivo-lightbox.css">
+        .logo {
+            font-size: 25px;
+            font-weight: 700;
+            color: var(--primary);
+        }
 
-    <!-- Animate CSS -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="assets/css/animate.css">
+        .logo span {
+            color: white;
+        }
 
-    <!-- Main Style -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="assets/css/main.css">
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
 
-    <!-- Responsive Style -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="assets/css/responsive.css">
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 15px;
+            transition: 0.3s;
+        }
 
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+        .accent {
+            color: var(--primary);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            max-width: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: var(--primary);
+            opacity: 0.07;
+            filter: blur(100px);
+            border-radius: 50%;
+            top: 20%;
+            left: 10%;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 25px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .terminal {
+            color: var(--green);
+            font-family: monospace;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero h3 {
+            font-size: 23px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 7px;
+            font-weight: 600;
+            border: 1px solid var(--primary);
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #001219;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline {
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #001219;
+        }
+
+        /* ================= TERMINAL CARD ================= */
+
+        .terminal-window {
+            background: #0b1018;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .terminal-header {
+            height: 40px;
+            background: #151b26;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 0 15px;
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #64748b;
+        }
+
+        .terminal-body {
+            padding: 25px;
+            font-family: monospace;
+            color: #cbd5e1;
+            min-height: 330px;
+        }
+
+        .terminal-body p {
+            margin-bottom: 12px;
+        }
+
+        .command {
+            color: var(--green);
+        }
+
+        .output {
+            color: #94a3b8;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .profile-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .profile-icon {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin: auto auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #00d9ff, #0066ff);
+            font-size: 55px;
+        }
+
+        .profile-box h3 {
+            font-size: 25px;
+        }
+
+        .profile-box p {
+            color: var(--muted);
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .info {
+            padding: 15px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .info strong {
+            display: block;
+            color: var(--primary);
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 28px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ================= EXPERIENCE ================= */
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .timeline-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .timeline-card h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-card .company {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .timeline-card .date {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-card ul {
+            list-style: disc;
+            margin-left: 20px;
+            color: #cbd5e1;
+        }
+
+        .timeline-card li {
+            margin-bottom: 7px;
+        }
+
+        /* ================= TECHNOLOGY ================= */
+
+        .tech-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .tech {
+            padding: 10px 18px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: #cbd5e1;
+            transition: 0.3s;
+        }
+
+        .tech:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* ================= STATS ================= */
+
+        .stats-section {
+            max-width: none;
+            background: var(--bg-light);
+        }
+
+        .stats {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 35px 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .stat h3 {
+            font-size: 42px;
+            color: var(--primary);
+        }
+
+        .stat p {
+            color: var(--muted);
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item .icon {
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .contact-item span {
+            display: block;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        footer strong {
+            color: var(--primary);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .hero-content,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .terminal-window {
+                max-width: 700px;
+                width: 100%;
+                margin: auto;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #0b1018;
+                flex-direction: column;
+                padding: 25px;
+                gap: 20px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .skills-grid,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header id="header-wrap">
-
-
-    <!-- Navigation -->
-
-    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
-
-        <div class="container">
-
-
-         <!-- Logo -->
-
-<div class="navbar-header">
-
-    <button class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#main-navbar"
-            aria-controls="main-navbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-
-        <span class="navbar-toggler-icon"></span>
-
-        <span class="icon-menu"></span>
-        <span class="icon-menu"></span>
-        <span class="icon-menu"></span>
-
-    </button>
-
-    <a href="index.html"
-       class="navbar-brand"
-       style="
-       display:flex;
-       align-items:center;
-       width:260px;
-       height:70px;
-       padding:0;
-       text-decoration:none;
-       ">
-
-        <img src="assets/img/profile-logo.png"
-             alt="Profile Logo"
-             style="
-             width:190px;
-             height:auto;
-             display:block;
-             ">
-
-    </a>
-
-</div>
-
-
-            <!-- Desktop Menu -->
-
-            <div class="collapse navbar-collapse"
-                 id="main-navbar">
-
-
-                <ul class="
-                    onepage-nev
-                    navbar-nav
-                    mr-auto
-                    w-100
-                    justify-content-end
-                    clearfix
-                ">
-
-
-                    <li class="nav-item active">
-
-                        <a class="nav-link"
-                           href="#hero-area">
-
-                            Home
-
-                        </a>
-
-                    </li>
-
-
-                    <li class="nav-item">
-
-                        <a class="nav-link"
-                           href="#about">
-
-                            About
-
-                        </a>
-
-                    </li>
-
-
-                    <li class="nav-item">
-
-                        <a class="nav-link"
-                           href="#skills">
-
-                            Skills
-
-                        </a>
-
-                    </li>
-
-
-                    <li class="nav-item">
-
-                        <a class="nav-link"
-                           href="#services">
-
-                            Services
-
-                        </a>
-
-                    </li>
-
-
-                    <li class="nav-item">
-
-                        <a class="nav-link"
-                           href="#resume">
-
-                            Resume
-
-                        </a>
-
-                    </li>
-
-
-                    <li class="nav-item">
-
-                        <a class="nav-link"
-                           href="#projects">
-
-                            Projects
-
-                        </a>
-
-                    </li>
-
-
-                    <li class="nav-item">
-
-                        <a class="nav-link"
-                           href="#contact">
-
-                            Contact
-
-                        </a>
-
-                    </li>
-
-
-                </ul>
-
-            </div>
-
-        </div>
-
-
-        <!-- Mobile Menu -->
-
-        <ul class="onepage-nev mobile-menu">
-
-
-            <li>
-                <a href="#hero-area">
-                    Home
-                </a>
-            </li>
-
-
-            <li>
-                <a href="#about">
-                    About
-                </a>
-            </li>
-
-
-            <li>
-                <a href="#skills">
-                    Skills
-                </a>
-            </li>
-
-
-            <li>
-                <a href="#services">
-                    Services
-                </a>
-            </li>
-
-
-            <li>
-                <a href="#resume">
-                    Resume
-                </a>
-            </li>
-
-
-            <li>
-                <a href="#projects">
-                    Projects
-                </a>
-            </li>
-
-
-            <li>
-                <a href="#contact">
-                    Contact
-                </a>
-            </li>
-
-
+<!-- ================= NAVBAR ================= -->
+
+<header>
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            Arun<span>.</span>
+        </a>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
 
     </nav>
-
-
-
-    <!-- =================================================
-         HERO
-    ================================================== -->
-
-    <div id="hero-area"
-         class="hero-area-bg">
-
-
-        <div class="overlay"></div>
-
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="
-                    col-md-12
-                    col-sm-12
-                    text-center
-                ">
-
-
-                    <div class="contents">
-
-
-                        <h5 class="
-                            script-font
-                            wow
-                            fadeInUp
-                        "
-                            data-wow-delay="0.2s">
-
-                            Hello, I'm
-
-                        </h5>
-
-
-                        <h2 class="
-                            head-title
-                            wow
-                            fadeInUp
-                        "
-                            data-wow-delay="0.4s">
-
-                            Arun Kumar J
-
-                        </h2>
-
-
-                        <p class="
-                            script-font
-                            wow
-                            fadeInUp
-                        "
-                           data-wow-delay="0.6s">
-
-                            Linux Administrator |
-                            DevOps |
-                            Production & Application Support
-
-                        </p>
-
-
-                        <!-- Social Links -->
-
-                        <ul class="
-                            social-icon
-                            wow
-                            fadeInUp
-                        "
-                            data-wow-delay="0.8s">
-
-
-                            <li>
-
-                                <a class="linkedin"
-                                   href="https://www.linkedin.com/in/arun-kumar-j-linux-production-support/"
-                                   target="_blank">
-
-                                    <i class="
-                                        icon-social-linkedin
-                                    "></i>
-
-                                </a>
-
-                            </li>
-
-
-                            <li>
-
-                                <a class="github"
-                                   href="https://github.com/arunkumarj-git"
-                                   target="_blank">
-
-                                    <i class="
-                                        icon-social-github
-                                    "></i>
-
-                                </a>
-
-                            </li>
-
-
-                            <li>
-
-                                <a class="mail"
-                                   href="mailto:arunkumarjcv@gmail.com">
-
-                                    <i class="
-                                        icon-envelope
-                                    "></i>
-
-                                </a>
-
-                            </li>
-
-
-                        </ul>
-
-
-                        <div class="
-                            header-button
-                            wow
-                            fadeInUp
-                        "
-                             data-wow-delay="1s">
-
-
-                            <a href="#contact"
-                               class="btn btn-common">
-
-                                Contact Me
-
-                            </a>
-
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
 </header>
 
 
+<!-- ================= HERO ================= -->
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+<section class="hero" id="home">
 
-<section id="about"
-         class="section-padding">
+    <div class="hero-content">
 
+        <div>
 
-    <div class="container">
-
-
-        <div class="row">
-
-
-            <!-- Image -->
-
-            <div class="
-                col-lg-6
-                col-md-6
-                col-sm-12
-            ">
-
-
-                <div class="
-                    img-thumb
-                    wow
-                    fadeInLeft
-                "
-                     data-wow-delay="0.3s">
-
-
-                    <img class="img-fluid"
-                         src="assets/img/about/about-1.jpg"
-                         alt="Arun Kumar J">
-
-
-                </div>
-
-
+            <div class="terminal">
+                $ whoami
             </div>
 
+            <h1>
+                Arun Kumar <span>J</span>
+            </h1>
 
+            <h3>
+                Linux Production Support Engineer
+            </h3>
 
-            <!-- About Content -->
+            <p>
+                Linux Administrator with 4+ years of experience in
+                production support, server administration,
+                application deployment, troubleshooting,
+                monitoring and database administration.
+            </p>
 
-            <div class="
-                col-lg-6
-                col-md-6
-                col-sm-12
-            ">
+            <div class="buttons">
 
+                <a href="#contact" class="btn btn-primary">
+                    Contact Me
+                </a>
 
-                <div class="
-                    profile-wrapper
-                    wow
-                    fadeInRight
-                "
-                     data-wow-delay="0.3s">
-
-
-                    <h3>
-                        About Me
-                    </h3>
-
-
-                    <p>
-
-                        Linux Administrator with 4+ years
-                        of experience in production support,
-                        Linux administration, application
-                        deployment, troubleshooting,
-                        shell scripting, monitoring and
-                        database administration.
-
-                    </p>
-
-
-                    <p>
-
-                        Experienced with RHEL, CentOS,
-                        Ubuntu, Debian, Apache, Tomcat,
-                        MySQL, HAProxy, Nginx, Redis,
-                        RabbitMQ and Zabbix.
-
-                    </p>
-
-
-                    <p>
-
-                        Currently learning DevOps
-                        Practices & Automation.
-
-                    </p>
-
-
-                    <div class="about-profile">
-
-
-                        <ul class="admin-profile">
-
-
-                            <li>
-
-                                <span class="pro-title">
-                                    Name
-                                </span>
-
-                                <span class="pro-detail">
-                                    Arun Kumar J
-                                </span>
-
-                            </li>
-
-
-                            <li>
-
-                                <span class="pro-title">
-                                    Experience
-                                </span>
-
-                                <span class="pro-detail">
-                                    4+ Years
-                                </span>
-
-                            </li>
-
-
-                            <li>
-
-                                <span class="pro-title">
-                                    Location
-                                </span>
-
-                                <span class="pro-detail">
-                                    Madurai, Tamil Nadu, India
-                                </span>
-
-                            </li>
-
-
-                            <li>
-
-                                <span class="pro-title">
-                                    Email
-                                </span>
-
-                                <span class="pro-detail">
-                                    arunkumarjcv@gmail.com
-                                </span>
-
-                            </li>
-
-
-                            <li>
-
-                                <span class="pro-title">
-                                    DevOps
-                                </span>
-
-                                <span class="pro-detail">
-                                    Currently Learning
-                                </span>
-
-                            </li>
-
-
-                        </ul>
-
-
-                    </div>
-
-
-                    <a href="assets/Arunkumarj_Linux_Resume.pdf"
-                       class="btn btn-common"
-                       download>
-
-
-                        <i class="icon-paper-clip"></i>
-
-                        Download Resume
-
-
-                    </a>
-
-
-                </div>
-
+                <a href="assets/Arunkumarj_Linux_Resume.pdf"
+                   class="btn btn-outline"
+                   download>
+                    Download Resume
+                </a>
 
             </div>
-
 
         </div>
 
 
-    </div>
+        <div class="terminal-window">
 
+            <div class="terminal-header">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <div class="terminal-body">
+
+                <p>
+                    <span class="command">$</span>
+                    hostname
+                </p>
+
+                <p class="output">
+                    linux-production-server
+                </p>
+
+                <p>
+                    <span class="command">$</span>
+                    uptime
+                </p>
+
+                <p class="output">
+                    4+ years production experience
+                </p>
+
+                <p>
+                    <span class="command">$</span>
+                    skills
+                </p>
+
+                <p class="output">
+                    Linux | Apache | Tomcat | MySQL
+                </p>
+
+                <p class="output">
+                    HAProxy | Nginx | Redis | RabbitMQ
+                </p>
+
+                <p class="output">
+                    Zabbix | Shell Scripting | SSL/TLS
+                </p>
+
+                <p>
+                    <span class="command">$</span>
+                    status
+                </p>
+
+                <p class="output">
+                    <span style="color:#22c55e;">
+                        ● SYSTEM READY
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
+<!-- ================= ABOUT ================= -->
 
-<!-- =====================================================
-     SKILLS
-===================================================== -->
+<section id="about">
 
-<section id="skills"
-         class="section-padding">
+    <div class="section-title">
+        <h2>About <span class="accent">Me</span></h2>
+        <p>Linux Administration & Production Support</p>
+    </div>
 
+    <div class="about-grid">
 
-    <div class="container">
+        <div class="profile-box">
 
-
-        <h2 class="section-title">
-
-            Technical Skills
-
-        </h2>
-
-
-        <div class="row">
-
-
-            <!-- Linux -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-linux"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Linux
-                        </h3>
-
-
-                        <p>
-
-                            RHEL, CentOS,
-                            Ubuntu and Debian.
-
-                        </p>
-
-
-                        <p>
-
-                            User & Group Management,
-                            File System Management
-                            and Disk Quota Management.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
+            <div class="profile-icon">
+                🐧
             </div>
 
-
-
-            <!-- Linux Server -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-server"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Linux Server Management
-                        </h3>
-
-
-                        <p>
-
-                            Server installation,
-                            configuration and maintenance.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Shell -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-code"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Shell Scripting
-                        </h3>
-
-
-                        <p>
-
-                            Bash / Shell scripting
-                            and automation.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Apache Tomcat -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-server"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Apache & Tomcat
-                        </h3>
-
-
-                        <p>
-
-                            Installation,
-                            configuration,
-                            upgrades and
-                            application deployment.
-
-                        </p>
-
-
-                        <p>
-
-                            JAR, WAR and class
-                            file deployment.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- MySQL -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <!-- FIXED MYSQL ICON -->
-
-                        <i class="fa fa-database"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            MySQL
-                        </h3>
-
-
-                        <p>
-
-                            Installation,
-                            configuration,
-                            administration
-                            and maintenance.
-
-                        </p>
-
-
-                        <p>
-
-                            User creation,
-                            privileges,
-                            backup & recovery
-                            and troubleshooting.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Monitoring -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-line-chart"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Monitoring
-                        </h3>
-
-
-                        <p>
-
-                            Zabbix monitoring,
-                            CPU monitoring,
-                            Disk I/O monitoring,
-                            log monitoring and
-                            troubleshooting.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Load Balancer -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-random"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            HAProxy & Nginx
-                        </h3>
-
-
-                        <p>
-
-                            Load balancer
-                            configuration and
-                            application traffic
-                            management.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Redis RabbitMQ -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-exchange"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Redis & RabbitMQ
-                        </h3>
-
-
-                        <p>
-
-                            Redis and RabbitMQ
-                            configuration for
-                            application environments.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Security -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-lock"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            SSL / JKS / CSR
-                        </h3>
-
-
-                        <p>
-
-                            SSL/TLS,
-                            JKS,
-                            CSR generation and
-                            certificate management.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Backup -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-cloud-upload"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Backup & Recovery
-                        </h3>
-
-
-                        <p>
-
-                            Daily, weekly and
-                            monthly database
-                            backups.
-
-                        </p>
-
-
-                        <p>
-
-                            tar, dump and gzip.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Server Access -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-exchange"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Server Access
-                        </h3>
-
-
-                        <p>
-
-                            SSH, FTP, SFTP,
-                            SCP and Rsync.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- DevOps -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-cogs"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            DevOps
-                        </h3>
-
-
-                        <p>
-
-                            Currently learning
-                            DevOps practices
-                            and automation.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
+            <h3>Linux Administrator</h3>
+
+            <p>
+                Production & Application Support
+            </p>
 
         </div>
 
 
-    </div>
+        <div class="about-text">
 
+            <h3>
+                Building stable and reliable
+                <span class="accent">Linux infrastructure.</span>
+            </h3>
 
-</section>
+            <p>
+                I am a Linux Administrator with 4+ years of experience
+                working in production support environments.
+                My experience includes Linux server installation,
+                configuration, application deployment,
+                troubleshooting, monitoring and database administration.
+            </p>
 
+            <p>
+                I work with Linux distributions including RHEL,
+                CentOS, Ubuntu and Debian, along with Apache,
+                Tomcat, MySQL, HAProxy, Nginx, Redis, RabbitMQ
+                and Zabbix.
+            </p>
 
+            <div class="info-grid">
 
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section id="services"
-         class="services section-padding">
-
-
-    <h2 class="section-title">
-
-        What I Do
-
-    </h2>
-
-
-    <div class="container">
-
-
-        <div class="row">
-
-
-            <!-- Linux -->
-
-            <div class="
-                col-md-6
-                col-lg-3
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-linux"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Linux Administration
-                        </h3>
-
-
-                        <p>
-
-                            Installation,
-                            configuration and
-                            management of Linux
-                            servers.
-
-                        </p>
-
-
-                    </div>
-
-
+                <div class="info">
+                    <strong>EXPERIENCE</strong>
+                    4+ Years
                 </div>
 
-
-            </div>
-
-
-
-            <!-- Application -->
-
-            <div class="
-                col-md-6
-                col-lg-3
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-server"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Application Deployment
-                        </h3>
-
-
-                        <p>
-
-                            Apache and Tomcat
-                            application deployment
-                            using JAR and WAR files.
-
-                        </p>
-
-
-                    </div>
-
-
+                <div class="info">
+                    <strong>ROLE</strong>
+                    Linux Production Support
                 </div>
 
-
-            </div>
-
-
-
-            <!-- Database -->
-
-            <div class="
-                col-md-6
-                col-lg-3
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-database"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Database Administration
-                        </h3>
-
-
-                        <p>
-
-                            MySQL administration,
-                            permissions,
-                            backups and
-                            troubleshooting.
-
-                        </p>
-
-
-                    </div>
-
-
+                <div class="info">
+                    <strong>LOCATION</strong>
+                    Tamil Nadu, India
                 </div>
 
-
-            </div>
-
-
-
-            <!-- Production -->
-
-            <div class="
-                col-md-6
-                col-lg-3
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-cogs"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Production Support
-                        </h3>
-
-
-                        <p>
-
-                            L2 ticket handling,
-                            troubleshooting,
-                            monitoring and
-                            root cause analysis.
-
-                        </p>
-
-
-                    </div>
-
-
+                <div class="info">
+                    <strong>AVAILABILITY</strong>
+                    Available
                 </div>
 
-
             </div>
-
 
         </div>
 
-
     </div>
-
 
 </section>
 
 
-
-<!-- =====================================================
-     RESUME
-===================================================== -->
-
-<section id="resume"
-         class="section-padding">
-
-
-    <div class="container">
-
-
-        <div class="row">
-
-
-            <!-- Education -->
-
-            <div class="
-                col-lg-6
-                col-md-6
-            ">
-
-
-                <div class="education">
-
-
-                    <ul class="timeline">
-
-
-                        <li>
-
-                            <i class="
-                                icon-graduation
-                            "></i>
-
-
-                            <h2 class="timelin-title">
-
-                                Education
-
-                            </h2>
-
-                        </li>
-
-
-                        <li>
-
-
-                            <div class="content-text">
-
-
-                                <h3 class="line-title">
-
-                                    Diploma in Electrical
-                                    and Electronics Engineering
-
-                                </h3>
-
-
-                                <span>
-
-                                    2016 - 2019
-
-                                </span>
-
-
-                                <p class="line-text">
-
-                                    Thangam Muthu
-                                    Polytechnic College
-
-                                </p>
-
-
-                            </div>
-
-
-                        </li>
-
-
-                    </ul>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Experience -->
-
-            <div class="
-                col-lg-6
-                col-md-6
-            ">
-
-
-                <div class="experience">
-
-
-                    <ul class="timeline">
-
-
-                        <li>
-
-                            <i class="
-                                icon-briefcase
-                            "></i>
-
-
-                            <h2 class="timelin-title">
-
-                                Experience
-
-                            </h2>
-
-                        </li>
-
-
-                        <li>
-
-
-                            <div class="content-text">
-
-
-                                <h3 class="line-title">
-
-                                    Linux Production Support
-
-                                </h3>
-
-
-                                <span>
-
-                                    April 2022 - Present
-
-                                </span>
-
-
-                                <p class="line-text">
-
-                                    OASYS Cybernetics
-                                    Pvt. Ltd., Chennai
-
-                                </p>
-
-
-                                <ul>
-
-
-                                    <li>
-                                        Daily production
-                                        support and
-                                        troubleshooting.
-                                    </li>
-
-
-                                    <li>
-                                        L2 ticket handling
-                                        and support requests.
-                                    </li>
-
-
-                                    <li>
-                                        Linux server
-                                        installation and
-                                        configuration.
-                                    </li>
-
-
-                                    <li>
-                                        Linux-based release
-                                        and upgrade
-                                        activities.
-                                    </li>
-
-
-                                    <li>
-                                        Rotational on-call
-                                        production support.
-                                    </li>
-
-
-                                    <li>
-                                        Apache and Tomcat
-                                        installation and
-                                        configuration.
-                                    </li>
-
-
-                                    <li>
-                                        JAR, WAR and
-                                        class-file
-                                        deployments.
-                                    </li>
-
-
-                                    <li>
-                                        Application server
-                                        log monitoring and
-                                        analysis.
-                                    </li>
-
-
-                                    <li>
-                                        Shell scripting for
-                                        Apache and Tomcat
-                                        start/stop.
-                                    </li>
-
-
-                                    <li>
-                                        Redis, RabbitMQ
-                                        and MySQL
-                                        configuration.
-                                    </li>
-
-
-                                    <li>
-                                        Tomcat 7, 8, 9
-                                        and 10 upgrades.
-                                    </li>
-
-
-                                    <li>
-                                        Java heap memory
-                                        configuration.
-                                    </li>
-
-
-                                    <li>
-                                        HAProxy, subdomains
-                                        and SSL certificate
-                                        configuration.
-                                    </li>
-
-
-                                    <li>
-                                        Tomcat SSL,
-                                        third-party
-                                        certificates
-                                        and JKS.
-                                    </li>
-
-
-                                    <li>
-                                        CSR generation
-                                        using Java
-                                        Keystore.
-                                    </li>
-
-
-                                    <li>
-                                        MySQL administration,
-                                        users and
-                                        permissions.
-                                    </li>
-
-
-                                    <li>
-                                        Daily, weekly
-                                        and monthly
-                                        database backups.
-                                    </li>
-
-
-                                </ul>
-
-
-                            </div>
-
-
-                        </li>
-
-
-                    </ul>
-
-
-                </div>
-
-
-            </div>
-
-
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="section-title">
+        <h2>Professional <span class="accent">Skills</span></h2>
+        <p>Technologies and areas I work with</p>
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="skill-icon">🐧</div>
+            <h3>Linux Administration</h3>
+            <p>
+                RHEL, CentOS, Ubuntu and Debian server
+                installation, configuration and maintenance.
+            </p>
         </div>
 
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     PROJECTS
-===================================================== -->
-
-<section id="projects"
-         class="section-padding">
-
-
-    <div class="container">
-
-
-        <h2 class="section-title">
-
-            Projects
-
-        </h2>
-
-
-        <div class="row">
-
-
-            <!-- Linux Production -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-briefcase"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Linux Production
-                        </h3>
-
-
-                        <p>
-
-                            Linux production server
-                            administration,
-                            application deployment,
-                            monitoring and
-                            troubleshooting.
-
-                        </p>
-
-
-                        <p>
-
-                            RHEL, CentOS, Ubuntu,
-                            Debian, Apache
-                            and Tomcat.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- DevOps Learning -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-cogs"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            DevOps Learning
-                        </h3>
-
-
-                        <p>
-
-                            Currently learning
-                            DevOps practices
-                            and automation.
-
-                        </p>
-
-
-                        <p>
-
-                            Linux administration,
-                            Shell scripting and
-                            infrastructure
-                            automation.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- MySQL -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <!-- MYSQL FIX -->
-
-                        <i class="fa fa-database"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            MySQL
-                        </h3>
-
-
-                        <p>
-
-                            MySQL installation,
-                            configuration,
-                            administration
-                            and maintenance.
-
-                        </p>
-
-
-                        <p>
-
-                            User creation,
-                            privileges,
-                            backup & recovery
-                            and troubleshooting.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Apache Tomcat -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-server"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Apache & Tomcat
-                        </h3>
-
-
-                        <p>
-
-                            Apache and Tomcat
-                            installation,
-                            configuration
-                            and administration.
-
-                        </p>
-
-
-                        <p>
-
-                            JAR, WAR and
-                            class-file
-                            application
-                            deployment.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Zabbix -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-line-chart"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Zabbix Monitoring
-                        </h3>
-
-
-                        <p>
-
-                            Infrastructure
-                            monitoring using
-                            Zabbix.
-
-                        </p>
-
-
-                        <p>
-
-                            CPU, Disk I/O,
-                            application logs
-                            and production
-                            troubleshooting.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- HAProxy -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-random"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            HAProxy & Nginx
-                        </h3>
-
-
-                        <p>
-
-                            Load balancer
-                            configuration
-                            and application
-                            traffic management.
-
-                        </p>
-
-
-                        <p>
-
-                            HAProxy, Nginx,
-                            subdomains and
-                            SSL certificates.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Redis RabbitMQ -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-exchange"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Redis & RabbitMQ
-                        </h3>
-
-
-                        <p>
-
-                            Redis and RabbitMQ
-                            configuration for
-                            application
-                            environments.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- SSL -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-lock"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            SSL / JKS / CSR
-                        </h3>
-
-
-                        <p>
-
-                            SSL/TLS certificate
-                            management,
-                            Java Keystore
-                            and CSR generation.
-
-                        </p>
-
-
-                        <p>
-
-                            Tomcat SSL
-                            configuration.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Backup -->
-
-            <div class="
-                col-md-6
-                col-lg-4
-            ">
-
-
-                <div class="services-item">
-
-
-                    <div class="icon">
-
-                        <i class="fa fa-cloud-upload"></i>
-
-                    </div>
-
-
-                    <div class="services-content">
-
-
-                        <h3>
-                            Backup & Recovery
-                        </h3>
-
-
-                        <p>
-
-                            Daily, weekly and
-                            monthly database
-                            backups.
-
-                        </p>
-
-
-                        <p>
-
-                            tar, dump and
-                            gzip backup
-                            operations.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
+        <div class="skill-card">
+            <div class="skill-icon">⚙️</div>
+            <h3>Application Deployment</h3>
+            <p>
+                Apache and Tomcat administration with
+                JAR, WAR and class-file deployments.
+            </p>
         </div>
 
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section id="contact"
-         class="section-padding">
-
-
-    <div class="container">
-
-
-        <h2 class="section-title">
-
-            Contact Me
-
-        </h2>
-
-
-        <div class="row">
-
-
-            <!-- Contact Information -->
-
-            <div class="col-md-6">
-
-
-                <div class="contact-block">
-
-
-                    <h2>
-                        Get In Touch
-                    </h2>
-
-
-                    <p>
-
-                        Linux Administrator with
-                        experience in production
-                        support, application
-                        deployment and Linux
-                        administration.
-
-                    </p>
-
-
-                    <div class="contact-info">
-
-
-                        <p>
-
-                            <i class="
-                                icon-envelope
-                            "></i>
-
-                            <strong>
-                                Email:
-                            </strong>
-
-
-                            <a href="mailto:arunkumarjcv@gmail.com">
-
-                                arunkumarjcv@gmail.com
-
-                            </a>
-
-                        </p>
-
-
-                        <p>
-
-                            <i class="
-                                icon-location-pin
-                            "></i>
-
-                            <strong>
-                                Location:
-                            </strong>
-
-
-                            Madurai,
-                            Tamil Nadu,
-                            India
-
-                        </p>
-
-
-                        <p>
-
-                            <i class="
-                                icon-social-linkedin
-                            "></i>
-
-                            <strong>
-                                LinkedIn:
-                            </strong>
-
-
-                            <a href="
-                                https://www.linkedin.com/in/arun-kumar-j-linux-production-support/
-                            "
-                               target="_blank">
-
-                                Arun Kumar J
-
-                            </a>
-
-                        </p>
-
-
-                        <p>
-
-                            <i class="
-                                icon-social-github
-                            "></i>
-
-                            <strong>
-                                GitHub:
-                            </strong>
-
-
-                            <a href="
-                                https://github.com/arunkumarj-git
-                            "
-                               target="_blank">
-
-                                arunkumarj-git
-
-                            </a>
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Contact Form -->
-
-            <div class="col-md-6">
-
-
-                <div class="contact-block">
-
-
-                    <h2>
-                        Contact Form
-                    </h2>
-
-
-                    <form id="contactForm">
-
-
-                        <div class="form-group">
-
-                            <input type="text"
-                                   class="form-control"
-                                   id="name"
-                                   name="name"
-                                   placeholder="Name"
-                                   required>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <input type="email"
-                                   class="form-control"
-                                   id="email"
-                                   name="email"
-                                   placeholder="Email"
-                                   required>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <input type="text"
-                                   class="form-control"
-                                   id="subject"
-                                   name="subject"
-                                   placeholder="Subject"
-                                   required>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <textarea
-                                class="form-control"
-                                id="message"
-                                name="message"
-                                rows="5"
-                                placeholder="Your Message"
-                                required></textarea>
-
-                        </div>
-
-
-                        <button type="submit"
-                                class="btn btn-common">
-
-                            Send Message
-
-                        </button>
-
-
-                    </form>
-
-
-                </div>
-
-
-            </div>
-
-
+        <div class="skill-card">
+            <div class="skill-icon">🗄️</div>
+            <h3>MySQL Administration</h3>
+            <p>
+                Installation, configuration, users,
+                permissions, backup and troubleshooting.
+            </p>
         </div>
 
+        <div class="skill-card">
+            <div class="skill-icon">📊</div>
+            <h3>Monitoring</h3>
+            <p>
+                Zabbix monitoring, CPU and disk I/O
+                analysis and application log monitoring.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🔐</div>
+            <h3>Security</h3>
+            <p>
+                SSL/TLS certificates, JKS, CSR generation
+                and certificate management.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🚀</div>
+            <h3>Automation</h3>
+            <p>
+                Bash/Shell scripting and automation of
+                routine production administration tasks.
+            </p>
+        </div>
 
     </div>
-
 
 </section>
 
 
+<!-- ================= EXPERIENCE ================= -->
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<section id="experience">
 
-<footer class="footer-area section-padding">
+    <div class="section-title">
+        <h2>Work <span class="accent">Experience</span></h2>
+        <p>Production support experience</p>
+    </div>
 
+    <div class="timeline">
 
-    <div class="container">
+        <div class="timeline-item">
 
+            <div class="timeline-dot"></div>
 
-        <div class="row">
+            <div class="timeline-card">
 
+                <h3>
+                    Linux Production Support
+                </h3>
 
-            <div class="col-md-12 text-center">
+                <div class="company">
+                    OASYS Cybernetics Pvt. Ltd., Chennai
+                </div>
 
+                <div class="date">
+                    April 2022 - Present
+                </div>
 
-                <ul class="social-icon">
-
+                <ul>
 
                     <li>
-
-                        <a href="
-                            https://www.linkedin.com/in/arun-kumar-j-linux-production-support/
-                        "
-                           target="_blank">
-
-                            <i class="
-                                icon-social-linkedin
-                            "></i>
-
-                        </a>
-
+                        Provide daily production support
+                        and troubleshooting for hardware,
+                        software and operational issues.
                     </li>
-
 
                     <li>
-
-                        <a href="
-                            https://github.com/arunkumarj-git
-                        "
-                           target="_blank">
-
-                            <i class="
-                                icon-social-github
-                            "></i>
-
-                        </a>
-
+                        Monitor and resolve L2 tickets
+                        and support requests.
                     </li>
-
 
                     <li>
-
-                        <a href="
-                            mailto:arunkumarjcv@gmail.com
-                        ">
-
-                            <i class="
-                                icon-envelope
-                            "></i>
-
-                        </a>
-
+                        Install and configure Linux servers.
                     </li>
 
+                    <li>
+                        Participate in Linux-based release
+                        and upgrade activities.
+                    </li>
+
+                    <li>
+                        Install and configure Apache
+                        and Tomcat servers.
+                    </li>
+
+                    <li>
+                        Perform JAR, WAR and class-file
+                        deployments.
+                    </li>
+
+                    <li>
+                        Monitor and analyze application
+                        server logs.
+                    </li>
+
+                    <li>
+                        Write Shell scripts to start and
+                        stop Apache Tomcat servers.
+                    </li>
+
+                    <li>
+                        Configure Redis, RabbitMQ and
+                        MySQL in application properties.
+                    </li>
+
+                    <li>
+                        Configure HAProxy, subdomains
+                        and SSL certificates.
+                    </li>
+
+                    <li>
+                        Manage Tomcat SSL including
+                        third-party certificates and JKS.
+                    </li>
+
+                    <li>
+                        Create Shell scripts for daily,
+                        weekly and monthly database backups.
+                    </li>
 
                 </ul>
 
+            </div>
 
-                <p>
+        </div>
 
-                    © 2026 Arun Kumar J.
-                    All Rights Reserved.
+    </div>
 
-                </p>
+</section>
 
+
+<!-- ================= TECHNOLOGY ================= -->
+
+<section id="technology">
+
+    <div class="section-title">
+        <h2>Technology <span class="accent">Stack</span></h2>
+        <p>Tools and technologies</p>
+    </div>
+
+    <div class="tech-list">
+
+        <div class="tech">RHEL</div>
+        <div class="tech">CentOS</div>
+        <div class="tech">Ubuntu</div>
+        <div class="tech">Debian</div>
+        <div class="tech">Linux</div>
+        <div class="tech">Bash</div>
+        <div class="tech">Shell Scripting</div>
+        <div class="tech">Apache</div>
+        <div class="tech">Tomcat</div>
+        <div class="tech">MySQL</div>
+        <div class="tech">HAProxy</div>
+        <div class="tech">Nginx</div>
+        <div class="tech">Redis</div>
+        <div class="tech">RabbitMQ</div>
+        <div class="tech">Zabbix</div>
+        <div class="tech">SSL/TLS</div>
+        <div class="tech">JKS</div>
+        <div class="tech">CSR</div>
+        <div class="tech">SSH</div>
+        <div class="tech">SFTP</div>
+        <div class="tech">SCP</div>
+        <div class="tech">Rsync</div>
+        <div class="tech">tar</div>
+        <div class="tech">gzip</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats-section">
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3>4+</h3>
+            <p>Years Experience</p>
+        </div>
+
+        <div class="stat">
+            <h3>50+</h3>
+            <p>Linux Servers</p>
+        </div>
+
+        <div class="stat">
+            <h3>200+</h3>
+            <p>Application Deployments</p>
+        </div>
+
+        <div class="stat">
+            <h3>500+</h3>
+            <p>Issues Resolved</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+        <h2>Get In <span class="accent">Touch</span></h2>
+        <p>Let's connect</p>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <h3>Contact Information</h3>
+
+            <div class="contact-item">
+
+                <div class="icon">✉</div>
+
+                <div>
+                    <span>Email</span>
+                    <a href="mailto:arunkumarjcv@gmail.com">
+                        arunkumarjcv@gmail.com
+                    </a>
+                </div>
 
             </div>
 
 
+            <div class="contact-item">
+
+                <div class="icon">☎</div>
+
+                <div>
+                    <span>Phone</span>
+                    <a href="tel:+919080413143">
+                        +91 90804 13143
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="icon">in</div>
+
+                <div>
+                    <span>LinkedIn</span>
+
+                    <a href="https://www.linkedin.com/in/arun-kumar-j-linux-production-support/"
+                       target="_blank">
+                        Arun Kumar J
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="icon">⌘</div>
+
+                <div>
+
+                    <span>GitHub</span>
+
+                    <a href="https://github.com/arunkumarj-git"
+                       target="_blank">
+                        arunkumarj-git
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
 
 
+        <div class="contact-card">
+
+            <h3>Professional Summary</h3>
+
+            <p style="color:#94a3b8; margin-bottom:25px;">
+
+                Linux Administrator experienced in production
+                support, server administration, application
+                deployment, database administration,
+                monitoring and troubleshooting.
+
+            </p>
+
+            <a href="mailto:arunkumarjcv@gmail.com"
+               class="btn btn-primary">
+
+                Send Email
+
+            </a>
+
+        </div>
+
     </div>
 
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>Arun Kumar J</strong>.
+        Linux Production Support Engineer.
+    </p>
 
 </footer>
 
 
+<!-- ================= JAVASCRIPT ================= -->
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<script>
 
-<script src="assets/js/jquery-min.js"></script>
+    function toggleMenu() {
 
-<script src="assets/js/popper.min.js"></script>
+        const menu = document.getElementById("navLinks");
 
-<script src="assets/js/bootstrap.min.js"></script>
+        menu.classList.toggle("active");
 
-<script src="assets/js/jquery.mixitup.js"></script>
+    }
 
-<script src="assets/js/jquery.counterup.min.js"></script>
 
-<script src="assets/js/waypoints.min.js"></script>
+    document.querySelectorAll(".nav-links a").forEach(link => {
 
-<script src="assets/js/wow.js"></script>
+        link.addEventListener("click", () => {
 
-<script src="assets/js/jquery.nav.js"></script>
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
 
-<script src="assets/js/jquery.easing.min.js"></script>
+        });
 
-<script src="assets/js/nivo-lightbox.js"></script>
+    });
 
-<script src="assets/js/jquery.slicknav.js"></script>
 
-<script src="assets/js/main.js"></script>
+    // Simple terminal typing effect
 
-<script src="assets/js/form-validator.min.js"></script>
+    const terminalText =
+        document.querySelector(".terminal");
 
-<script src="assets/js/contact-form-script.min.js"></script>
+    let text = "$ whoami";
 
-<script src="assets/js/map.js"></script>
+    let index = 0;
 
+    terminalText.textContent = "";
+
+    function typeTerminal() {
+
+        if (index < text.length) {
+
+            terminalText.textContent += text.charAt(index);
+
+            index++;
+
+            setTimeout(typeTerminal, 70);
+
+        }
+
+    }
+
+    typeTerminal();
+
+</script>
 
 </body>
-
 </html>
