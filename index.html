@@ -1,2345 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description"
-content="Arun Kumar J — Linux Production Support Engineer and Linux Administrator.">
-
-<title>Arun Kumar J | Linux Production Support Engineer</title>
-
-<style>
-
-/* =========================================================
-   01. ROOT
-========================================================= */
-
-:root {
-    --bg: #030508;
-    --bg-soft: #070b11;
-    --panel: rgba(11, 17, 25, 0.82);
-    --panel-light: rgba(255,255,255,0.035);
-
-    --green: #72ff9d;
-    --green-dark: #25d969;
-    --cyan: #65e7ff;
-    --orange: #ffb86b;
-
-    --white: #f4f8fb;
-    --text: #dce5ee;
-    --muted: #8c9aaa;
-
-    --border: rgba(255,255,255,0.09);
-
-    --radius: 24px;
-
-    --shadow:
-        0 30px 90px rgba(0,0,0,.45);
-
-    --max-width: 1200px;
-}
-
-
-/* =========================================================
-   02. RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-    background:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(114,255,157,.08),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 90% 20%,
-            rgba(101,231,255,.07),
-            transparent 30%
-        ),
-        linear-gradient(
-            180deg,
-            #030508,
-            #070b11
-        );
-
-    color: var(--white);
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    font-family: inherit;
-}
-
-
-/* =========================================================
-   03. BACKGROUND
-========================================================= */
-
-.grid-background {
-    position: fixed;
-    inset: 0;
-
-    z-index: -5;
-
-    opacity: .18;
-
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.035) 1px,
-            transparent 1px
-        );
-
-    background-size: 45px 45px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 90%
-        );
-}
-
-.glow {
-    position: fixed;
-
-    border-radius: 50%;
-
-    filter: blur(90px);
-
-    opacity: .12;
-
-    z-index: -4;
-
-    pointer-events: none;
-}
-
-.glow-one {
-    width: 350px;
-    height: 350px;
-
-    background: var(--green);
-
-    left: -160px;
-    top: 20%;
-}
-
-.glow-two {
-    width: 350px;
-    height: 350px;
-
-    background: var(--cyan);
-
-    right: -160px;
-    top: 60%;
-}
-
-
-/* =========================================================
-   04. CONTAINER
-========================================================= */
-
-.container {
-    width: min(
-        var(--max-width),
-        92%
-    );
-
-    margin: auto;
-}
-
-
-/* =========================================================
-   05. NAVBAR
-========================================================= */
-
-header {
-    position: fixed;
-
-    top: 15px;
-    left: 0;
-    right: 0;
-
-    z-index: 100;
-}
-
-.navbar {
-    min-height: 70px;
-
-    padding: 10px 15px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    background:
-        rgba(4,7,11,.78);
-
-    backdrop-filter: blur(20px);
-
-    border: 1px solid var(--border);
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,.25);
-}
-
-.logo {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    font-weight: 900;
-
-    font-size: 1rem;
-}
-
-.logo img {
-    width: 48px;
-    height: 48px;
-
-    object-fit: contain;
-}
-
-.logo span {
-    color: var(--green);
-}
-
-.nav-links {
-    display: flex;
-
-    gap: 4px;
-
-    align-items: center;
-}
-
-.nav-links a {
-    padding: 9px 13px;
-
-    color: #b8c4d2;
-
-    border-radius: 10px;
-
-    font-size: .88rem;
-
-    transition: .25s ease;
-}
-
-.nav-links a:hover {
-    color: var(--green);
-
-    background:
-        rgba(114,255,157,.07);
-}
-
-.menu-button {
-    display: none;
-
-    background: transparent;
-
-    color: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: 10px;
-
-    padding: 9px 12px;
-
-    cursor: pointer;
-}
-
-
-/* =========================================================
-   06. HERO
-========================================================= */
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    padding-top: 145px;
-}
-
-.hero-grid {
-    display: grid;
-
-    grid-template-columns:
-        1.08fr
-        .92fr;
-
-    gap: 65px;
-
-    align-items: center;
-}
-
-.status {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-    padding: 7px 13px;
-
-    border-radius: 999px;
-
-    border: 1px solid
-        rgba(114,255,157,.2);
-
-    background:
-        rgba(114,255,157,.05);
-
-    color: var(--green);
-
-    font:
-        800 .75rem
-        ui-monospace,
-        monospace;
-
-    letter-spacing: .13em;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: var(--green);
-
-    box-shadow:
-        0 0 15px
-        var(--green);
-
-    animation: pulse 1.8s infinite;
-}
-
-@keyframes pulse {
-
-    0% {
-        opacity: 1;
-        transform: scale(1);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arun Kumar J — Linux Production Support Engineer with 4+ years of production experience in Linux administration, application deployment, troubleshooting, monitoring and database administration.">
+  <meta name="keywords" content="Linux Administrator, Linux Production Support Engineer, RHEL, CentOS, Ubuntu, Apache, Tomcat, MySQL, HAProxy, Nginx, Redis, RabbitMQ, Zabbix, Shell Scripting, SSL TLS">
+  <meta name="author" content="Arun Kumar J">
+  <title>Arun Kumar J | Linux Production Support Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#070a0f;
+      --panel:#0d121a;
+      --panel-2:#101720;
+      --line:#1d2835;
+      --text:#edf3f8;
+      --muted:#92a0ad;
+      --green:#48e68a;
+      --green-2:#1fc66d;
+      --cyan:#62d8ff;
+      --yellow:#ffd166;
+      --red:#ff667d;
+      --shadow:0 24px 80px rgba(0,0,0,.38);
+      --radius:22px;
+      --max:1180px;
     }
 
-    50% {
-        opacity: .45;
-        transform: scale(.75);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.hero h1 {
-    margin-top: 25px;
-
-    font-size:
-        clamp(
-            3.5rem,
-            8vw,
-            7rem
-        );
-
-    line-height: .9;
-
-    letter-spacing: -.07em;
-}
-
-.hero h1 span {
-    color: var(--green);
-}
-
-.hero-title {
-    margin-top: 25px;
-
-    font-size:
-        clamp(
-            1.2rem,
-            2.5vw,
-            1.7rem
-        );
-
-    color: #d8e2ec;
-}
-
-.hero-description {
-    max-width: 700px;
-
-    margin-top: 20px;
-
-    color: var(--muted);
-
-    font-size: 1.03rem;
-}
-
-.buttons {
-    display: flex;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-
-    margin-top: 30px;
-}
-
-.btn {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
-    padding: 13px 19px;
-
-    border-radius: 13px;
-
-    border: 1px solid var(--border);
-
-    font-weight: 800;
-
-    font-size: .9rem;
-
-    transition: .25s;
-}
-
-.btn-primary {
-    color: #031007;
-
-    background:
-        var(--green);
-
-    border-color:
-        var(--green);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 15px 35px
-        rgba(114,255,157,.18);
-}
-
-.btn-secondary {
-    background:
-        rgba(255,255,255,.035);
-}
-
-.btn-secondary:hover {
-    color: var(--green);
-
-    border-color:
-        rgba(114,255,157,.3);
-
-    transform: translateY(-3px);
-}
-
-
-/* =========================================================
-   07. TERMINAL
-========================================================= */
-
-.terminal {
-    background:
-        rgba(7,11,17,.92);
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    overflow: hidden;
-
-    box-shadow: var(--shadow);
-
-    transform: rotate(1deg);
-}
-
-.terminal-header {
-    height: 52px;
-
-    padding: 0 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    border-bottom:
-        1px solid var(--border);
-}
-
-.window-dot {
-    width: 10px;
-    height: 10px;
-
-    border-radius: 50%;
-
-    background: #667383;
-}
-
-.terminal-name {
-    margin-left: auto;
-
-    color: #6f7c8d;
-
-    font:
-        12px
-        ui-monospace,
-        monospace;
-}
-
-.terminal-body {
-    padding: 27px;
-
-    color: #b8c5d3;
-
-    font:
-        14px/2
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        monospace;
-}
-
-.prompt {
-    color: var(--green);
-}
-
-.command {
-    color: white;
-}
-
-.cyan {
-    color: var(--cyan);
-}
-
-.ok {
-    color: var(--green);
-}
-
-.orange {
-    color: var(--orange);
-}
-
-.cursor {
-    display: inline-block;
-
-    width: 8px;
-    height: 16px;
-
-    background: var(--green);
-
-    vertical-align: -3px;
-
-    animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-
-    50% {
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   08. SECTIONS
-========================================================= */
-
-section {
-    padding: 110px 0;
-}
-
-.section-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: end;
-
-    gap: 30px;
-
-    margin-bottom: 40px;
-}
-
-.kicker {
-    color: var(--green);
-
-    font:
-        700 .75rem
-        ui-monospace,
-        monospace;
-
-    letter-spacing: .18em;
-
-    text-transform: uppercase;
-}
-
-.section-title {
-    margin-top: 8px;
-
-    font-size:
-        clamp(
-            2rem,
-            4vw,
-            3.4rem
-        );
-
-    line-height: 1.05;
-
-    letter-spacing: -.045em;
-}
-
-.section-description {
-    max-width: 520px;
-
-    color: var(--muted);
-}
-
-
-/* =========================================================
-   09. ABOUT
-========================================================= */
-
-.about-grid {
-    display: grid;
-
-    grid-template-columns:
-        .7fr
-        1.3fr;
-
-    gap: 65px;
-
-    align-items: center;
-}
-
-.photo-container {
-    width: min(
-        380px,
-        100%
-    );
-
-    margin: auto;
-
-    position: relative;
-}
-
-.photo-container::before {
-    content: "";
-
-    position: absolute;
-
-    inset: -14px;
-
-    border:
-        1px solid
-        rgba(114,255,157,.2);
-
-    border-radius: 30px;
-
-    transform: rotate(-4deg);
-}
-
-.photo-container img {
-    display: block;
-
-    width: 100%;
-
-    aspect-ratio: 1;
-
-    object-fit: cover;
-
-    border-radius: 27px;
-
-    border: 1px solid var(--border);
-
-    position: relative;
-}
-
-.about-content p {
-    color: var(--muted);
-
-    margin-bottom: 15px;
-}
-
-.info-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap: 12px;
-
-    margin-top: 25px;
-}
-
-.info-box {
-    padding: 15px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 15px;
-
-    background:
-        rgba(255,255,255,.025);
-}
-
-.info-box small {
-    display: block;
-
-    color: #687689;
-
-    font-size: .7rem;
-
-    text-transform: uppercase;
-
-    letter-spacing: .12em;
-}
-
-.info-box strong {
-    font-size: .92rem;
-}
-
-
-/* =========================================================
-   10. SKILLS
-========================================================= */
-
-.skills-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 17px;
-}
-
-.skill-card {
-    padding: 25px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 21px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(17,24,34,.9),
-            rgba(7,11,17,.9)
-        );
-
-    transition: .3s;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.skill-card::after {
-    content: "";
-
-    position: absolute;
-
-    width: 100px;
-    height: 100px;
-
-    right: -50px;
-    bottom: -50px;
-
-    background: var(--green);
-
-    filter: blur(65px);
-
-    opacity: .04;
-}
-
-.skill-card:hover {
-    transform: translateY(-6px);
-
-    border-color:
-        rgba(114,255,157,.28);
-}
-
-.skill-icon {
-    font-size: 1.8rem;
-
-    margin-bottom: 15px;
-}
-
-.skill-card h3 {
-    font-size: 1.05rem;
-
-    margin-bottom: 7px;
-}
-
-.skill-card p {
-    color: var(--muted);
-
-    font-size: .88rem;
-}
-
-
-/* =========================================================
-   11. EXPERIENCE
-========================================================= */
-
-.timeline {
-    position: relative;
-
-    padding-left: 31px;
-}
-
-.timeline::before {
-    content: "";
-
-    position: absolute;
-
-    left: 5px;
-    top: 0;
-    bottom: 0;
-
-    width: 1px;
-
-    background:
-        linear-gradient(
-            var(--green),
-            transparent
-        );
-}
-
-.timeline-item {
-    position: relative;
-}
-
-.timeline-item::before {
-    content: "";
-
-    position: absolute;
-
-    left: -31px;
-
-    top: 7px;
-
-    width: 10px;
-    height: 10px;
-
-    border:
-        2px solid
-        var(--green);
-
-    border-radius: 50%;
-
-    background:
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:
+        radial-gradient(circle at 15% 10%, rgba(72,230,138,.08), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(98,216,255,.07), transparent 25%),
         var(--bg);
-}
-
-.experience-card {
-    padding: 28px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 21px;
-
-    background:
-        rgba(255,255,255,.025);
-}
-
-.experience-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: start;
-
-    gap: 20px;
-}
-
-.experience-card h3 {
-    font-size: 1.3rem;
-}
-
-.company {
-    color: var(--green);
-
-    font-weight: 800;
-
-    margin-top: 3px;
-}
-
-.period {
-    white-space: nowrap;
-
-    padding: 6px 10px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 8px;
-
-    color: #7d8998;
-
-    font:
-        700 .73rem
-        ui-monospace,
-        monospace;
-}
-
-.experience-card ul {
-    margin:
-        18px 0 0 19px;
-
-    color: var(--muted);
-}
-
-.experience-card li {
-    margin: 7px 0;
-}
-
-
-/* =========================================================
-   12. TECHNOLOGY
-========================================================= */
-
-.tech-list {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-}
-
-.tech {
-    padding: 10px 15px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 999px;
-
-    background:
-        rgba(255,255,255,.025);
-
-    color: #ccd6e1;
-
-    font:
-        700 .82rem
-        ui-monospace,
-        monospace;
-
-    transition: .25s;
-}
-
-.tech:hover {
-    color: var(--green);
-
-    border-color:
-        rgba(114,255,157,.3);
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   13. STATS
-========================================================= */
-
-.stats {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap: 15px;
-
-    margin-top: 35px;
-}
-
-.stat {
-    text-align: center;
-
-    padding: 24px 15px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 18px;
-
-    background:
-        rgba(255,255,255,.025);
-}
-
-.stat strong {
-    display: block;
-
-    color: var(--green);
-
-    font-size: 2.2rem;
-
-    line-height: 1;
-}
-
-.stat span {
-    display: block;
-
-    margin-top: 8px;
-
-    color: var(--muted);
-
-    font-size: .8rem;
-}
-
-
-/* =========================================================
-   14. CONTACT
-========================================================= */
-
-.contact-box {
-    padding: 38px;
-
-    border:
-        1px solid
-        rgba(114,255,157,.17);
-
-    border-radius: 28px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(114,255,157,.06),
-            rgba(101,231,255,.025)
-        );
-}
-
-.contact-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 15px;
-
-    margin-top: 28px;
-}
-
-.contact-card {
-    padding: 19px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 16px;
-
-    background:
-        rgba(0,0,0,.17);
-}
-
-.contact-card small {
-    color: #718095;
-
-    font-size: .7rem;
-
-    letter-spacing: .1em;
-}
-
-.contact-card a {
-    display: block;
-
-    margin-top: 5px;
-
-    font-weight: 800;
-
-    word-break: break-word;
-}
-
-.contact-card a:hover {
-    color: var(--green);
-}
-
-
-/* =========================================================
-   15. FOOTER
-========================================================= */
-
-footer {
-    padding: 30px 0;
-
-    border-top:
-        1px solid
-        var(--border);
-
-    color: #718095;
-
-    font-size: .82rem;
-}
-
-.footer-content {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 20px;
-}
-
-
-/* =========================================================
-   16. REVEAL ANIMATION
-========================================================= */
-
-.reveal {
-    opacity: 0;
-
-    transform:
-        translateY(28px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =========================================================
-   17. RESPONSIVE
-========================================================= */
-
-@media(max-width: 950px) {
-
-    .hero-grid {
-        grid-template-columns: 1fr;
+      color:var(--text);
+      font-family:Inter,system-ui,sans-serif;
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .mono{font-family:"JetBrains Mono",monospace}
+    .muted{color:var(--muted)}
+
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      background:rgba(7,10,15,.78);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand-mark{
+      width:42px;height:42px;border:1px solid #294132;border-radius:12px;
+      display:grid;place-items:center;background:#0c1610;
+      box-shadow:0 0 30px rgba(72,230,138,.08);
+    }
+    .brand-mark img{width:29px;height:29px;object-fit:contain}
+    .brand span:last-child{letter-spacing:-.02em}
+    .brand b{color:var(--green)}
+    .nav-links{display:flex;gap:26px;align-items:center}
+    .nav-links a{font-size:13px;color:#aeb9c3;font-weight:600}
+    .nav-links a:hover{color:var(--green)}
+    .nav-cta{
+      padding:10px 15px;border:1px solid #31543e;border-radius:10px;
+      color:var(--green)!important;background:rgba(72,230,138,.06)
+    }
+    .menu{display:none;background:none;border:0;color:white;font-size:25px}
+
+    /* COMMON */
+    section{padding:105px 0;position:relative}
+    .section-head{margin-bottom:42px}
+    .eyebrow{
+      color:var(--green);font:600 12px "JetBrains Mono",monospace;
+      letter-spacing:.13em;text-transform:uppercase;margin-bottom:12px
+    }
+    h2{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.04em}
+    .section-desc{max-width:700px;margin-top:14px;color:var(--muted)}
+    .grid{display:grid;gap:20px}
+
+    /* HERO */
+    .hero{padding:150px 0 85px;min-height:100vh;display:grid;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center}
+    .status{
+      display:inline-flex;align-items:center;gap:9px;padding:8px 12px;
+      border:1px solid #294232;border-radius:999px;background:rgba(72,230,138,.055);
+      color:#b8f6d1;font:600 11px "JetBrains Mono",monospace;
+      margin-bottom:22px
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green)}
+    .hero h1{
+      font-size:clamp(46px,7vw,82px);line-height:.98;letter-spacing:-.065em;
+      margin-bottom:20px
+    }
+    .hero h1 span{color:var(--green)}
+    .role{font-size:clamp(20px,2.4vw,30px);font-weight:700;margin-bottom:16px}
+    .hero-copy{color:var(--muted);max-width:680px;font-size:17px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      padding:13px 18px;border-radius:12px;font-weight:700;font-size:14px;
+      border:1px solid var(--line);transition:.2s
+    }
+    .btn-primary{background:var(--green);color:#06100a;border-color:var(--green)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 35px rgba(72,230,138,.16)}
+    .btn-secondary{background:#0d131b;color:#dce5eb}
+    .btn-secondary:hover{border-color:#355043;transform:translateY(-2px)}
+
+    .terminal{
+      border:1px solid #22303d;background:#0a0f15;border-radius:20px;
+      box-shadow:var(--shadow);overflow:hidden
+    }
+    .term-top{height:42px;display:flex;align-items:center;gap:7px;padding:0 14px;border-bottom:1px solid #1b2530;background:#0d131b}
+    .circle{width:10px;height:10px;border-radius:50%;background:#27323c}
+    .term-title{margin-left:6px;color:#73818e;font:500 11px "JetBrains Mono",monospace}
+    .term-body{padding:25px;font:500 13px/2 "JetBrains Mono",monospace;color:#bac5ce}
+    .prompt{color:var(--green)}
+    .cmd{color:#f2f6f8}
+    .out{color:#8e9ba7;padding-left:18px}
+    .out strong{color:#e7edf1}
+    .out .ok{color:var(--green)}
+    .out .cyan{color:var(--cyan)}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:55px;align-items:center}
+    .photo-wrap{position:relative;max-width:390px;margin:auto}
+    .photo-wrap:before{
+      content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid #284032;border-radius:26px;z-index:0
+    }
+    .photo{
+      position:relative;z-index:1;aspect-ratio:1;object-fit:cover;border-radius:24px;
+      border:1px solid #25333e;background:#0d141b
+    }
+    .about-copy p{color:var(--muted);margin-bottom:18px}
+    .quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:25px}
+    .quick{border:1px solid var(--line);background:#0c1219;padding:15px;border-radius:14px}
+    .quick small{display:block;color:#657381;font:600 10px "JetBrains Mono",monospace;text-transform:uppercase}
+    .quick strong{display:block;margin-top:4px;font-size:14px}
+
+    /* SKILLS */
+    .skills-grid{grid-template-columns:repeat(3,1fr)}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.012));
+      border:1px solid var(--line);border-radius:var(--radius);padding:25px;
+      transition:.22s
+    }
+    .card:hover{transform:translateY(-4px);border-color:#30463a;box-shadow:0 20px 55px rgba(0,0,0,.22)}
+    .icon{
+      width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+      background:#0e1913;border:1px solid #263d2e;color:var(--green);
+      font-family:"JetBrains Mono",monospace;font-weight:700;margin-bottom:18px
+    }
+    .card h3{font-size:18px;margin-bottom:8px}
+    .card p{font-size:13px;color:var(--muted)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+    .tag{
+      padding:6px 9px;border-radius:8px;border:1px solid #202d39;background:#0a1016;
+      color:#aab6c0;font:500 11px "JetBrains Mono",monospace
     }
 
-    .terminal {
-        max-width: 700px;
+    /* EXPERIENCE */
+    .timeline{position:relative;margin-top:10px}
+    .timeline:before{content:"";position:absolute;left:10px;top:8px;bottom:8px;width:1px;background:#24302b}
+    .job{position:relative;padding-left:43px;margin-bottom:38px}
+    .job-dot{position:absolute;left:4px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px #102016}
+    .job-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:12px}
+    .job h3{font-size:21px}
+    .company{color:var(--green);font-weight:700;margin-top:3px}
+    .date{white-space:nowrap;color:#81909c;font:500 11px "JetBrains Mono",monospace;border:1px solid var(--line);padding:7px 10px;border-radius:8px}
+    .job ul{padding-left:19px;color:var(--muted);font-size:14px}
+    .job li{margin:8px 0}
 
-        transform: none;
+    /* PROJECTS */
+    .projects{grid-template-columns:repeat(2,1fr)}
+    .project-label{font:600 10px "JetBrains Mono",monospace;color:var(--green);text-transform:uppercase;letter-spacing:.1em}
+    .project h3{margin:10px 0 8px;font-size:20px}
+    .project p{color:var(--muted);font-size:13px}
+    .project .tags{margin-top:19px}
+
+    /* TECHNOLOGY */
+    .tech-cloud{display:flex;flex-wrap:wrap;gap:10px}
+    .tech{
+      border:1px solid #22303b;background:#0b1218;border-radius:11px;padding:11px 13px;
+      font:600 12px "JetBrains Mono",monospace;color:#c1ccd5
     }
+    .tech:hover{border-color:#31513d;color:var(--green)}
 
-    .about-grid {
-        grid-template-columns: 1fr;
+    /* STATS */
+    .stats{grid-template-columns:repeat(4,1fr)}
+    .stat{padding:28px;text-align:center;border:1px solid var(--line);background:#0b1118;border-radius:18px}
+    .stat strong{font-size:35px;letter-spacing:-.05em}
+    .stat span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+
+    /* CONTACT */
+    .contact-box{
+      border:1px solid #263a2e;background:
+      radial-gradient(circle at 90% 20%,rgba(72,230,138,.07),transparent 35%),#0b1118;
+      border-radius:26px;padding:45px
     }
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+    .contact-item{border:1px solid var(--line);background:#0a1016;border-radius:14px;padding:16px}
+    .contact-item small{color:#687784;font:600 10px "JetBrains Mono",monospace}
+    .contact-item a,.contact-item span{display:block;margin-top:4px;font-size:14px;font-weight:600;word-break:break-word}
+    .contact-item a:hover{color:var(--green)}
 
-    .skills-grid {
-        grid-template-columns:
-            repeat(2,1fr);
+    footer{border-top:1px solid #151e27;padding:28px 0;color:#667481;font-size:12px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-inner b{color:#a7b3bc}
+
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:900px){
+      .hero-grid,.about-grid{grid-template-columns:1fr}
+      .hero{padding-top:125px}
+      .terminal{max-width:680px}
+      .skills-grid{grid-template-columns:repeat(2,1fr)}
+      .stats{grid-template-columns:repeat(2,1fr)}
     }
-
-    .stats {
-        grid-template-columns:
-            repeat(2,1fr);
+    @media(max-width:700px){
+      .container{width:min(calc(100% - 28px),var(--max))}
+      section{padding:78px 0}
+      .nav-links{
+        position:absolute;top:74px;left:14px;right:14px;display:none;
+        flex-direction:column;align-items:stretch;padding:15px;background:#0b1118;
+        border:1px solid var(--line);border-radius:16px
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{padding:10px}
+      .nav-cta{text-align:center}
+      .menu{display:block}
+      .skills-grid,.projects,.contact-grid{grid-template-columns:1fr}
+      .job-head{flex-direction:column}
+      .date{white-space:normal}
+      .contact-box{padding:26px}
+      .quick-grid{grid-template-columns:1fr}
+      .hero h1{font-size:52px}
     }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-@media(max-width: 700px) {
-
-    header {
-        top: 8px;
-    }
-
-    .navbar {
-        border-radius: 15px;
-    }
-
-    .menu-button {
-        display: block;
-    }
-
-    .nav-links {
-
-        display: none;
-
-        position: absolute;
-
-        top: 78px;
-
-        left: 4%;
-        right: 4%;
-
-        padding: 10px;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        background:
-            rgba(5,8,13,.97);
-
-        border:
-            1px solid
-            var(--border);
-
-        border-radius: 17px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hero {
-        padding-top: 125px;
-    }
-
-    section {
-        padding: 80px 0;
-    }
-
-    .hero h1 {
-        font-size:
-            clamp(
-                3.1rem,
-                17vw,
-                5rem
-            );
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stats {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .section-header {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-    .experience-header {
-        flex-direction: column;
-    }
-
-    .footer-content {
-        flex-direction: column;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-box {
-        padding: 27px;
-    }
-}
-
-</style>
+  </style>
 </head>
 
-
 <body>
-
-
-<!-- =========================================================
-     BACKGROUND
-========================================================= -->
-
-<div class="grid-background"></div>
-
-<div class="glow glow-one"></div>
-<div class="glow glow-two"></div>
-
-
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
-
-<header>
-
-<div class="container">
-
-<nav class="navbar">
-
-<a href="#home" class="logo">
-
-<img
-src="assets/img/tux.png"
-alt="Linux Tux Logo"
->
-
-<span>Arun Kumar J</span>
-
-</a>
-
-
-<button
-class="menu-button"
-id="menuButton"
-aria-label="Open navigation"
->
-☰
-</button>
-
-
-<div
-class="nav-links"
-id="navLinks"
->
-
-<a href="#home">Home</a>
-
-<a href="#about">About</a>
-
-<a href="#skills">Skills</a>
-
-<a href="#experience">Experience</a>
-
-<a href="#technology">Technology</a>
-
-<a href="#contact">Contact</a>
-
-</div>
-
-</nav>
-
-</div>
-
-</header>
-
-
-
-<!-- =========================================================
-     MAIN
-========================================================= -->
-
-<main>
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section
-class="hero"
-id="home"
->
-
-<div class="container">
-
-<div class="hero-grid">
-
-
-<div class="reveal">
-
-<div class="status">
-
-<span class="status-dot"></span>
-
-SYSTEM READY · PRODUCTION SUPPORT
-
-</div>
-
-
-<h1>
-
-Arun
-
-<span>Kumar J</span>
-
-</h1>
-
-
-<h2 class="hero-title">
-
-Linux Production Support Engineer
-
-</h2>
-
-
-<p class="hero-description">
-
-Linux Administrator with 4+ years of experience in
-production support, server administration,
-application deployment, troubleshooting,
-monitoring and database administration.
-
-</p>
-
-
-<div class="buttons">
-
-<a
-href="#contact"
-class="btn btn-primary"
->
-Let's Connect →
-</a>
-
-
-<a
-href="assets/Arunkumarj_Linux_Resume.pdf"
-download
-class="btn btn-secondary"
->
-Download Resume ↓
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- TERMINAL -->
-
-<div class="terminal reveal">
-
-
-<div class="terminal-header">
-
-<span class="window-dot"></span>
-<span class="window-dot"></span>
-<span class="window-dot"></span>
-
-<span class="terminal-name">
-arun@linux-production:~
-</span>
-
-</div>
-
-
-<div class="terminal-body">
-
-<div>
-<span class="prompt">$</span>
-<span class="command"> whoami</span>
-</div>
-
-<div>
-arun_kumar_j
-</div>
-
-
-<br>
-
-
-<div>
-<span class="prompt">$</span>
-<span class="command"> role</span>
-</div>
-
-<div class="cyan">
-Linux Production Support Engineer
-</div>
-
-
-<br>
-
-
-<div>
-<span class="prompt">$</span>
-<span class="command"> experience</span>
-</div>
-
-<div class="cyan">
-4+ years production support
-</div>
-
-
-<br>
-
-
-<div>
-<span class="prompt">$</span>
-<span class="command"> environment</span>
-</div>
-
-<div class="orange">
-RHEL · Ubuntu · Apache · Tomcat · MySQL
-</div>
-
-
-<br>
-
-
-<div>
-<span class="prompt">$</span>
-<span class="command"> status</span>
-</div>
-
-<div class="ok">
-● SYSTEM READY
-</div>
-
-
-<br>
-
-
-<div>
-<span class="prompt">$</span>
-<span class="cursor"></span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================================
-     ABOUT
-========================================================= -->
-
-<section id="about">
-
-<div class="container">
-
-
-<div class="section-header reveal">
-
-<div>
-
-<div class="kicker">
-// 01 · About
-</div>
-
-<h2 class="section-title">
-Reliable systems.<br>
-Practical support.
-</h2>
-
-</div>
-
-
-<p class="section-description">
-
-Focused on keeping Linux-based production
-environments stable, monitored and ready
-for business workloads.
-
-</p>
-
-</div>
-
-
-
-<div class="about-grid">
-
-
-<div class="photo-container reveal">
-
-<img
-src="assets/img/about/about-1.png"
-alt="Arun Kumar J"
->
-
-</div>
-
-
-
-<div class="about-content reveal">
-
-<p>
-
-I work in Linux production support with hands-on
-experience across operating systems, web and
-application servers, databases, proxies,
-monitoring and deployment activities.
-
-</p>
-
-
-<p>
-
-My core environment includes RHEL, CentOS,
-Ubuntu and Debian, with Apache, Tomcat,
-MySQL, HAProxy, Nginx, Redis, RabbitMQ
-and Zabbix.
-
-</p>
-
-
-<div class="info-grid">
-
-
-<div class="info-box">
-
-<small>Experience</small>
-
-<strong>
-4+ Years
-</strong>
-
-</div>
-
-
-<div class="info-box">
-
-<small>Role</small>
-
-<strong>
-Linux Production Support
-</strong>
-
-</div>
-
-
-<div class="info-box">
-
-<small>Location</small>
-
-<strong>
-Madurai, Tamil Nadu, India
-</strong>
-
-</div>
-
-
-<div class="info-box">
-
-<small>Availability</small>
-
-<strong>
-Available
-</strong>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SKILLS
-========================================================= -->
-
-<section id="skills">
-
-<div class="container">
-
-
-<div class="section-header reveal">
-
-<div>
-
-<div class="kicker">
-// 02 · Skills
-</div>
-
-<h2 class="section-title">
-What I work with.
-</h2>
-
-</div>
-
-
-<p class="section-description">
-
-A production-focused toolkit built around
-Linux operations, application support
-and infrastructure reliability.
-
-</p>
-
-</div>
-
-
-
-<div class="skills-grid">
-
-
-<article class="skill-card reveal">
-
-<div class="skill-icon">
-⌘
-</div>
-
-<h3>
-Linux Administration
-</h3>
-
-<p>
-RHEL, CentOS, Ubuntu and Debian
-server administration, configuration
-and troubleshooting.
-</p>
-
-</article>
-
-
-
-<article class="skill-card reveal">
-
-<div class="skill-icon">
-▣
-</div>
-
-<h3>
-Application Deployment
-</h3>
-
-<p>
-Apache and Tomcat administration with
-JAR/WAR application deployment activities.
-</p>
-
-</article>
-
-
-
-<article class="skill-card reveal">
-
-<div class="skill-icon">
-▤
-</div>
-
-<h3>
-MySQL Administration
-</h3>
-
-<p>
-Installation, configuration, users,
-permissions, backup and production
-troubleshooting.
-</p>
-
-</article>
-
-
-
-<article class="skill-card reveal">
-
-<div class="skill-icon">
-◉
-</div>
-
-<h3>
-Monitoring
-</h3>
-
-<p>
-Zabbix monitoring, issue identification,
-L2 ticket handling and operational support.
-</p>
-
-</article>
-
-
-
-<article class="skill-card reveal">
-
-<div class="skill-icon">
-⌁
-</div>
-
-<h3>
-Security
-</h3>
-
-<p>
-SSL/TLS certificates, JKS, CSR generation
-and certificate management.
-</p>
-
-</article>
-
-
-
-<article class="skill-card reveal">
-
-<div class="skill-icon">
-$
-</div>
-
-<h3>
-Automation
-</h3>
-
-<p>
-Bash and Shell scripting for repeatable
-administration and operational tasks.
-</p>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================================
-     EXPERIENCE
-========================================================= -->
-
-<section id="experience">
-
-<div class="container">
-
-
-<div class="section-header reveal">
-
-<div>
-
-<div class="kicker">
-// 03 · Experience
-</div>
-
-<h2 class="section-title">
-Production experience.
-</h2>
-
-</div>
-
-
-<p class="section-description">
-
-Hands-on responsibility for Linux environments
-and application infrastructure.
-
-</p>
-
-</div>
-
-
-
-<div class="timeline">
-
-
-<div class="timeline-item reveal">
-
-
-<div class="experience-card">
-
-
-<div class="experience-header">
-
-
-<div>
-
-<h3>
-Linux Production Support
-</h3>
-
-<div class="company">
-OASYS Cybernetics Pvt. Ltd.
-</div>
-
-</div>
-
-
-<div class="period">
-APR 2022 — PRESENT
-</div>
-
-
-</div>
-
-
-<ul>
-
-<li>
-Provide daily production support
-for Linux environments.
-</li>
-
-<li>
-Troubleshoot hardware, software
-and operational issues.
-</li>
-
-<li>
-Monitor systems and resolve
-L2 production tickets.
-</li>
-
-<li>
-Install and configure Linux servers
-and participate in release and
-upgrade activities.
-</li>
-
-<li>
-Install and configure Apache
-and Tomcat servers.
-</li>
-
-<li>
-Perform JAR/WAR application
-deployment activities.
-</li>
-
-<li>
-Support MySQL administration
-and production troubleshooting.
-</li>
-
-</ul>
-
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================================
-     TECHNOLOGY
-========================================================= -->
-
-<section id="technology">
-
-<div class="container">
-
-
-<div class="section-header reveal">
-
-<div>
-
-<div class="kicker">
-// 04 · Technology
-</div>
-
-<h2 class="section-title">
-My production stack.
-</h2>
-
-</div>
-
-
-<p class="section-description">
-
-Technologies and platforms used across
-Linux production support activities.
-
-</p>
-
-</div>
-
-
-
-<div class="tech-list reveal">
-
-<span class="tech">RHEL</span>
-
-<span class="tech">CentOS</span>
-
-<span class="tech">Ubuntu</span>
-
-<span class="tech">Debian</span>
-
-<span class="tech">Apache</span>
-
-<span class="tech">Tomcat</span>
-
-<span class="tech">MySQL</span>
-
-<span class="tech">HAProxy</span>
-
-<span class="tech">Nginx</span>
-
-<span class="tech">Redis</span>
-
-<span class="tech">RabbitMQ</span>
-
-<span class="tech">Zabbix</span>
-
-<span class="tech">Bash</span>
-
-<span class="tech">Shell Scripting</span>
-
-<span class="tech">SSL/TLS</span>
-
-<span class="tech">JKS</span>
-
-<span class="tech">CSR</span>
-
-<span class="tech">JAR/WAR</span>
-
-</div>
-
-
-
-<div class="stats">
-
-
-<div class="stat reveal">
-
-<strong>4+</strong>
-
-<span>
-Years Experience
-</span>
-
-</div>
-
-
-<div class="stat reveal">
-
-<strong>18+</strong>
-
-<span>
-Core Technologies
-</span>
-
-</div>
-
-
-<div class="stat reveal">
-
-<strong>L2</strong>
-
-<span>
-Production Support
-</span>
-
-</div>
-
-
-<div class="stat reveal">
-
-<strong>∞</strong>
-
-<span>
-Reliability Mindset
-</span>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CONTACT
-========================================================= -->
-
-<section id="contact">
-
-<div class="container">
-
-
-<div class="contact-box reveal">
-
-
-<div class="kicker">
-// 05 · Contact
-</div>
-
-
-<h2 class="section-title">
-
-Let's build
-reliable systems.
-
-</h2>
-
-
-<p
-class="section-description"
-style="margin-top:15px"
->
-
-Open to Linux production support
-and infrastructure opportunities.
-
-</p>
-
-
-
-<div class="contact-grid">
-
-
-<div class="contact-card">
-
-<small>
-EMAIL
-</small>
-
-<a
-href="mailto:arunkumarjcv@gmail.com"
->
-arunkumarjcv@gmail.com
-</a>
-
-</div>
-
-
-
-<div class="contact-card">
-
-<small>
-LINKEDIN
-</small>
-
-<a
-href="https://www.linkedin.com/in/arun-kumar-j-linux-production-support/"
-target="_blank"
-rel="noopener"
->
-View LinkedIn →
-</a>
-
-</div>
-
-
-
-<div class="contact-card">
-
-<small>
-GITHUB
-</small>
-
-<a
-href="https://github.com/arunkumarj-git"
-target="_blank"
-rel="noopener"
->
-View GitHub →
-</a>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-
-<div class="container">
-
-<div class="footer-content">
-
-<span>
-© 2026 Arun Kumar J
-</span>
-
-<span>
-Linux Production Support Engineer ·
-Madurai, Tamil Nadu, India
-</span>
-
-</div>
-
-</div>
-
-</footer>
-
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const navLinks =
-    document.getElementById("navLinks");
-
-
-menuButton.addEventListener(
-    "click",
-    () => {
-
-        navLinks.classList.toggle(
-            "active"
-        );
-
-    }
-);
-
-
-/* =========================================================
-   CLOSE MOBILE MENU
-========================================================= */
-
-document
-.querySelectorAll(".nav-links a")
-.forEach(link => {
-
-    link.addEventListener(
-        "click",
-        () => {
-
-            navLinks.classList.remove(
-                "active"
-            );
-
-        }
+  <nav>
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark"><img src="assets/img/tux.png" alt="Linux Tux logo"></span>
+        <span>Arun <b>Kumar J</b></span>
+      </a>
+
+      <button class="menu" id="menu" aria-label="Open navigation">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#technology">Technology</a>
+        <a href="#contact" class="nav-cta">Hire / Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="status"><span class="dot"></span> AVAILABLE FOR OPPORTUNITIES</div>
+          <h1>Arun Kumar <span>J</span></h1>
+          <div class="role">Linux Production Support Engineer</div>
+          <p class="hero-copy">
+            Linux Administrator with 4+ years of production experience in server administration,
+            application deployment, troubleshooting, monitoring, database administration and
+            Linux-based production support.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="assets/Arunkumarj_Linux_Resume.pdf" download>↓ Download Resume</a>
+            <a class="btn btn-secondary" href="#contact">Contact Me →</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/arun-kumar-j-linux-production-support/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <div class="terminal reveal">
+          <div class="term-top">
+            <span class="circle"></span><span class="circle"></span><span class="circle"></span>
+            <span class="term-title">arun@linux-production-server:~</span>
+          </div>
+          <div class="term-body">
+            <div><span class="prompt">$</span> <span class="cmd">whoami</span></div>
+            <div class="out">arun-kumar-j</div>
+
+            <div><span class="prompt">$</span> <span class="cmd">cat role.txt</span></div>
+            <div class="out"><strong>Linux Production Support Engineer</strong></div>
+
+            <div><span class="prompt">$</span> <span class="cmd">cat experience.txt</span></div>
+            <div class="out">4+ years production experience</div>
+
+            <div><span class="prompt">$</span> <span class="cmd">cat environment.txt</span></div>
+            <div class="out"><span class="cyan">RHEL</span> · Apache · Tomcat · MySQL · HAProxy · Nginx</div>
+
+            <div><span class="prompt">$</span> <span class="cmd">systemctl status production</span></div>
+            <div class="out"><span class="ok">● ACTIVE — SYSTEM READY</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="photo-wrap reveal">
+          <img class="photo" src="assets/img/about/about-1.png" alt="Arun Kumar J">
+        </div>
+
+        <div class="about-copy reveal">
+          <div class="eyebrow">01 / About</div>
+          <h2>Building stable & reliable Linux infrastructure.</h2>
+          <p style="margin-top:20px">
+            I work in Linux production support with a focus on keeping servers, applications
+            and supporting services stable, available and operational. My experience includes
+            Linux server administration, production troubleshooting, application deployments,
+            monitoring and MySQL administration.
+          </p>
+          <p>
+            I have hands-on exposure to RHEL, CentOS, Ubuntu and Debian along with Apache,
+            Tomcat, HAProxy, Nginx, Redis, RabbitMQ and Zabbix. I also work with Bash/Shell
+            scripting and SSL/TLS certificate management.
+          </p>
+
+          <div class="quick-grid">
+            <div class="quick"><small>Experience</small><strong>4+ Years</strong></div>
+            <div class="quick"><small>Role</small><strong>Linux Production Support</strong></div>
+            <div class="quick"><small>Location</small><strong>Madurai, Tamil Nadu, India</strong></div>
+            <div class="quick"><small>Availability</small><strong>Available for Opportunities</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">02 / Core Skills</div>
+          <h2>Production-ready technical skills.</h2>
+          <p class="section-desc">A practical stack for Linux operations, application support, infrastructure troubleshooting and day-to-day production reliability.</p>
+        </div>
+
+        <div class="grid skills-grid">
+          <article class="card reveal">
+            <div class="icon">$_</div>
+            <h3>Linux Administration</h3>
+            <p>Server administration, troubleshooting, service management and operational support across major Linux distributions.</p>
+            <div class="tags"><span class="tag">RHEL</span><span class="tag">CentOS</span><span class="tag">Ubuntu</span><span class="tag">Debian</span></div>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">APP</div>
+            <h3>Application Support</h3>
+            <p>Application server setup, configuration, deployments and production issue troubleshooting.</p>
+            <div class="tags"><span class="tag">Apache</span><span class="tag">Tomcat</span><span class="tag">JAR</span><span class="tag">WAR</span></div>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">DB</div>
+            <h3>MySQL Administration</h3>
+            <p>Installation, configuration, users, permissions, backup-related operations and troubleshooting.</p>
+            <div class="tags"><span class="tag">MySQL</span><span class="tag">Users</span><span class="tag">Permissions</span><span class="tag">Backup</span></div>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">MON</div>
+            <h3>Monitoring & Support</h3>
+            <p>Production monitoring, L2 ticket handling, issue investigation and service health checks.</p>
+            <div class="tags"><span class="tag">Zabbix</span><span class="tag">Logs</span><span class="tag">L2 Support</span></div>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">NET</div>
+            <h3>Proxy & Services</h3>
+            <p>Traffic handling and supporting infrastructure using proxy, load-balancing, caching and messaging components.</p>
+            <div class="tags"><span class="tag">HAProxy</span><span class="tag">Nginx</span><span class="tag">Redis</span><span class="tag">RabbitMQ</span></div>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">TLS</div>
+            <h3>Security & Automation</h3>
+            <p>SSL/TLS certificate lifecycle activities and shell scripting for operational tasks and automation.</p>
+            <div class="tags"><span class="tag">SSL/TLS</span><span class="tag">JKS</span><span class="tag">CSR</span><span class="tag">Bash</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">03 / Experience</div>
+          <h2>Production support experience.</h2>
+          <p class="section-desc">Focused on operational stability, incident troubleshooting, deployments and Linux infrastructure support.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="job reveal">
+            <span class="job-dot"></span>
+            <div class="job-head">
+              <div>
+                <h3>Linux Production Support</h3>
+                <div class="company">OASYS Cybernetics Pvt. Ltd.</div>
+              </div>
+              <div class="date">April 2022 — Present</div>
+            </div>
+            <ul>
+              <li>Provide daily production support for Linux-based environments and investigate operational issues.</li>
+              <li>Monitor systems and resolve L2 support tickets by troubleshooting server, application and service issues.</li>
+              <li>Install and configure Linux servers and participate in Linux-based release and upgrade activities.</li>
+              <li>Install and configure Apache and Tomcat application servers and support application operations.</li>
+              <li>Perform JAR/application deployments and assist with production troubleshooting during releases.</li>
+              <li>Work with MySQL administration tasks including installation, configuration, users, permissions, backup and troubleshooting.</li>
+              <li>Support services and infrastructure components including HAProxy, Nginx, Redis and RabbitMQ.</li>
+              <li>Work with SSL/TLS certificates, JKS and CSR generation/certificate management activities.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">04 / Practical Work</div>
+          <h2>What I work on in production.</h2>
+          <p class="section-desc">Representative responsibility areas based on my Linux production support experience.</p>
+        </div>
+
+        <div class="grid projects">
+          <article class="card project reveal">
+            <div class="project-label">Production Operations</div>
+            <h3>Linux Server Administration</h3>
+            <p>Server installation, configuration, service management, issue investigation and operational maintenance across Linux environments.</p>
+            <div class="tags"><span class="tag">Linux</span><span class="tag">RHEL</span><span class="tag">Ubuntu</span><span class="tag">Troubleshooting</span></div>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-label">Application Support</div>
+            <h3>Apache & Tomcat Operations</h3>
+            <p>Application-server setup, configuration, JAR deployments, release support and troubleshooting of application-related production issues.</p>
+            <div class="tags"><span class="tag">Apache</span><span class="tag">Tomcat</span><span class="tag">JAR</span><span class="tag">Deployment</span></div>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-label">Database Operations</div>
+            <h3>MySQL Administration</h3>
+            <p>Database installation and configuration, account and permission management, backup operations and production troubleshooting.</p>
+            <div class="tags"><span class="tag">MySQL</span><span class="tag">DB Admin</span><span class="tag">Backup</span></div>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-label">Monitoring & Reliability</div>
+            <h3>Production Monitoring & L2 Support</h3>
+            <p>Monitoring production environments, responding to alerts and tickets, investigating logs and supporting service availability.</p>
+            <div class="tags"><span class="tag">Zabbix</span><span class="tag">L2</span><span class="tag">Logs</span><span class="tag">Incident Support</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">05 / Technology</div>
+          <h2>Linux-first technology stack.</h2>
+        </div>
+        <div class="tech-cloud reveal">
+          <span class="tech">RHEL</span><span class="tech">CentOS</span><span class="tech">Ubuntu</span><span class="tech">Debian</span>
+          <span class="tech">Apache</span><span class="tech">Tomcat</span><span class="tech">MySQL</span><span class="tech">HAProxy</span>
+          <span class="tech">Nginx</span><span class="tech">Redis</span><span class="tech">RabbitMQ</span><span class="tech">Zabbix</span>
+          <span class="tech">Bash / Shell</span><span class="tech">SSL/TLS</span><span class="tech">JKS</span><span class="tech">CSR</span>
+          <span class="tech">JAR / WAR</span><span class="tech">Linux Troubleshooting</span><span class="tech">Production Support</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid stats">
+          <div class="stat reveal"><strong>4+</strong><span>Years Production Experience</span></div>
+          <div class="stat reveal"><strong>4</strong><span>Linux Distributions</span></div>
+          <div class="stat reveal"><strong>12+</strong><span>Core Technologies</span></div>
+          <div class="stat reveal"><strong>L2</strong><span>Production Support</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div class="eyebrow">06 / Contact</div>
+          <h2>Let's connect for the next opportunity.</h2>
+          <p class="section-desc">
+            Open to Linux Administration, Linux Production Support and related infrastructure support opportunities.
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-item">
+              <small>EMAIL</small>
+              <a href="mailto:arunkumarjcv@gmail.com">arunkumarjcv@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <small>LOCATION</small>
+              <span>Madurai, Tamil Nadu, India</span>
+            </div>
+            <div class="contact-item">
+              <small>LINKEDIN</small>
+              <a href="https://www.linkedin.com/in/arun-kumar-j-linux-production-support/" target="_blank" rel="noopener">linkedin.com/in/arun-kumar-j-linux-production-support</a>
+            </div>
+            <div class="contact-item">
+              <small>GITHUB</small>
+              <a href="https://github.com/arunkumarj-git" target="_blank" rel="noopener">github.com/arunkumarj-git</a>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:arunkumarjcv@gmail.com?subject=Linux%20Production%20Support%20Opportunity">Email Me →</a>
+            <a class="btn btn-secondary" href="https://github.com/arunkumarj-git" target="_blank" rel="noopener">View GitHub ↗</a>
+            <a class="btn btn-secondary" href="assets/Arunkumarj_Linux_Resume.pdf" download>Download CV ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> <b>Arun Kumar J</b>. Linux Production Support Engineer.</span>
+      <span class="mono">Built for production. Designed for recruiters.</span>
+    </div>
+  </footer>
+
+  <script>
+    const menu = document.getElementById("menu");
+    const navLinks = document.getElementById("navLinks");
+
+    menu.addEventListener("click", () => navLinks.classList.toggle("open"));
+    document.querySelectorAll("#navLinks a").forEach(a =>
+      a.addEventListener("click", () => navLinks.classList.remove("open"))
     );
 
-});
+    document.getElementById("year").textContent = new Date().getFullYear();
 
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, {threshold:.08});
 
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const observer =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(
-                entry => {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target
-                            .classList
-                            .add("visible");
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold: .12
-        }
-    );
-
-
-document
-.querySelectorAll(".reveal")
-.forEach(element => {
-
-    observer.observe(element);
-
-});
-
-
-/* =========================================================
-   TERMINAL TYPING EFFECT
-========================================================= */
-
-const terminalLines = [
-    "Linux Production Support",
-    "Server Administration",
-    "Application Deployment",
-    "Monitoring & Troubleshooting",
-    "MySQL Administration"
-];
-
-let terminalIndex = 0;
-
-setInterval(() => {
-
-    terminalIndex++;
-
-    if (
-        terminalIndex >=
-        terminalLines.length
-    ) {
-
-        terminalIndex = 0;
-
-    }
-
-}, 3000);
-
-</script>
-
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
