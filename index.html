@@ -1,2559 +1,2189 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Arun Kumar J | Linux Production Support Engineer</title>
+
+  <meta name="description"
+    content="Arun Kumar J - Linux Production Support Engineer, Linux Administrator and DevOps enthusiast.">
+
+  <style>
+    :root {
+      --bg: #050b14;
+      --bg-secondary: #091321;
+      --card: rgba(15, 27, 45, 0.75);
+      --border: rgba(255, 255, 255, 0.10);
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --primary: #00e5c3;
+      --secondary: #4f8cff;
+      --danger: #ff5f56;
+      --warning: #ffbd2e;
+      --success: #27c93f;
+      --radius: 20px;
+      --max-width: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(0, 229, 195, 0.10),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 15%,
+          rgba(79, 140, 255, 0.12),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #050b14,
+          #081321 50%,
+          #050b14
+        );
+
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+
+      background: rgba(5, 11, 20, 0.78);
+      backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid var(--border);
+    }
 
-    <meta charset="UTF-8">
+    .nav-container {
+      height: 75px;
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-    <title>Arun Kumar J | Linux Production Support</title>
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
 
-    <meta name="description"
-          content="Arun Kumar J - Linux Production Support Engineer, Linux Administrator and DevOps enthusiast.">
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
 
+    .logo-box {
+      width: 42px;
+      height: 42px;
 
-    <style>
+      display: grid;
+      place-items: center;
 
-        /* =====================================================
-           RESET
-        ===================================================== */
+      border-radius: 12px;
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary)
+        );
 
+      color: #031018;
+      font-weight: 900;
+    }
 
-        /* =====================================================
-           VARIABLES
-        ===================================================== */
+    .logo span {
+      color: var(--primary);
+    }
 
-        :root {
+    .nav-links {
+      display: flex;
+      gap: 5px;
+      list-style: none;
+    }
 
-            --bg: #080b12;
+    .nav-links a {
+      padding: 9px 13px;
 
-            --bg-light: #0e131d;
+      border-radius: 10px;
 
-            --card: #111722;
+      color: #cbd5e1;
 
-            --border: #202938;
+      font-size: 0.92rem;
 
-            --primary: #00d9ff;
+      transition: 0.25s;
+    }
 
-            --primary-dark: #0099b5;
+    .nav-links a:hover {
+      color: var(--primary);
+      background: rgba(255,255,255,0.05);
+    }
 
-            --text: #f1f5f9;
+    .menu-btn {
+      display: none;
 
-            --muted: #94a3b8;
+      background: none;
+      border: none;
 
-            --green: #22c55e;
+      color: white;
 
-        }
+      font-size: 1.6rem;
 
+      cursor: pointer;
+    }
 
-        /* =====================================================
-           BODY
-        ===================================================== */
+    /* =========================
+       HERO
+    ========================= */
 
-        body {
+    .hero {
+      min-height: 100vh;
 
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+      display: flex;
+      align-items: center;
 
-            background: var(--bg);
+      padding-top: 110px;
+    }
 
-            color: var(--text);
+    .hero-grid {
+      display: grid;
 
-            line-height: 1.7;
+      grid-template-columns:
+        1.15fr
+        0.85fr;
 
-        }
+      gap: 70px;
 
+      align-items: center;
+    }
 
-        a {
+    .eyebrow {
+      display: inline-block;
 
-            color: inherit;
+      color: var(--primary);
 
-            text-decoration: none;
+      font-size: 0.75rem;
 
-        }
+      font-weight: 800;
 
+      letter-spacing: 0.18em;
 
-        ul {
+      text-transform: uppercase;
 
-            list-style: none;
+      margin-bottom: 15px;
+    }
 
-        }
+    .hero h1 {
+      font-size:
+        clamp(
+          3.2rem,
+          7vw,
+          6.5rem
+        );
 
+      line-height: 0.98;
 
-        /* =====================================================
-           NAVBAR
-        ===================================================== */
+      letter-spacing: -0.055em;
 
-        header {
+      margin-bottom: 22px;
+    }
 
-            position: fixed;
+    .hero h1 span {
+      color: var(--primary);
+    }
 
-            width: 100%;
+    .hero-role {
+      font-size: 1.35rem;
 
-            top: 0;
+      font-weight: 700;
 
-            left: 0;
+      color: #dce7f5;
 
-            z-index: 999;
+      margin-bottom: 16px;
+    }
 
-            background:
-                rgba(8, 11, 18, 0.92);
+    .hero-description {
+      max-width: 700px;
 
-            backdrop-filter: blur(15px);
+      color: var(--muted);
 
-            border-bottom:
-                1px solid var(--border);
+      font-size: 1.03rem;
+    }
 
-        }
+    .hero-buttons {
+      display: flex;
 
+      gap: 14px;
 
-        .navbar {
+      flex-wrap: wrap;
 
-            max-width: 1200px;
+      margin: 30px 0;
+    }
 
-            margin: auto;
+    .btn {
+      display: inline-flex;
 
-            height: 75px;
+      align-items: center;
+      justify-content: center;
 
-            display: flex;
+      gap: 8px;
 
-            align-items: center;
+      padding: 13px 20px;
 
-            justify-content: space-between;
+      border-radius: 12px;
 
-            padding: 0 25px;
+      font-weight: 800;
 
-        }
+      border: 1px solid var(--border);
 
+      transition: 0.25s;
+    }
 
-        .logo {
+    .btn-primary {
+      color: #02120f;
 
-            font-size: 25px;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          #12bfae
+        );
 
-            font-weight: 700;
+      border: none;
+    }
 
-            color: var(--primary);
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+    }
 
-        }
+    .btn:hover {
+      transform: translateY(-3px);
 
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.25);
+    }
 
-        .logo span {
+    .social-links {
+      display: flex;
 
-            color: white;
+      gap: 10px;
 
-        }
+      list-style: none;
+    }
 
+    .social-links a {
+      width: 43px;
+      height: 43px;
 
-        .nav-links {
+      display: grid;
+      place-items: center;
 
-            display: flex;
+      border-radius: 12px;
 
-            gap: 30px;
+      border: 1px solid var(--border);
 
-        }
+      color: #cbd5e1;
 
+      font-weight: 800;
 
-        .nav-links a {
+      transition: 0.25s;
+    }
 
-            color: #cbd5e1;
+    .social-links a:hover {
+      color: var(--primary);
 
-            font-size: 15px;
+      border-color:
+        rgba(0,229,195,0.5);
 
-            transition: 0.3s;
+      transform: translateY(-3px);
+    }
 
-        }
+    /* =========================
+       TERMINAL
+    ========================= */
 
+    .terminal {
+      background: #050b12;
 
-        .nav-links a:hover {
+      border: 1px solid var(--border);
 
-            color: var(--primary);
+      border-radius: 22px;
 
-        }
+      overflow: hidden;
 
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.35);
+    }
 
-        .menu-btn {
+    .terminal-header {
+      height: 45px;
 
-            display: none;
+      display: flex;
 
-            font-size: 28px;
+      align-items: center;
 
-            cursor: pointer;
+      gap: 7px;
 
-            color: white;
+      padding: 0 16px;
 
-        }
+      border-bottom: 1px solid var(--border);
+    }
 
+    .terminal-dot {
+      width: 11px;
+      height: 11px;
 
-        /* =====================================================
-           GENERAL SECTIONS
-        ===================================================== */
+      border-radius: 50%;
+    }
 
-        section {
+    .red {
+      background: var(--danger);
+    }
 
-            max-width: 1200px;
+    .yellow {
+      background: var(--warning);
+    }
 
-            margin: auto;
+    .green {
+      background: var(--success);
+    }
 
-            padding: 100px 25px;
+    .terminal-body {
+      padding: 27px;
 
-        }
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
 
+      font-size: 0.88rem;
+    }
 
-        .section-title {
+    .terminal-line {
+      margin: 10px 0;
+    }
 
-            text-align: center;
+    .terminal-prompt {
+      color: var(--primary);
+    }
 
-            margin-bottom: 60px;
+    .terminal-command {
+      color: white;
+    }
 
-        }
+    .terminal-comment {
+      color: #718096;
+    }
 
+    .terminal-status {
+      margin-top: 25px;
 
-        .section-title h2 {
+      padding: 14px;
 
-            font-size: 38px;
+      border-radius: 12px;
 
-            margin-bottom: 10px;
+      color: var(--primary);
 
-        }
+      background:
+        rgba(0,229,195,0.07);
 
+      border:
+        1px solid rgba(0,229,195,0.18);
+    }
 
-        .section-title p {
+    /* =========================
+       SECTION HEADER
+    ========================= */
 
-            color: var(--muted);
+    .section-header {
+      text-align: center;
 
-        }
+      margin-bottom: 55px;
+    }
 
+    .section-header h2 {
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3rem
+        );
 
-        .accent {
+      line-height: 1.15;
+    }
 
-            color: var(--primary);
+    .section-header p {
+      max-width: 680px;
 
-        }
+      margin: 15px auto 0;
 
+      color: var(--muted);
+    }
 
-        /* =====================================================
-           HERO
-        ===================================================== */
+    /* =========================
+       ABOUT
+    ========================= */
 
-        .hero {
+    .about-grid {
+      display: grid;
 
-            min-height: 100vh;
+      grid-template-columns:
+        0.8fr
+        1.2fr;
 
-            max-width: none;
+      gap: 55px;
 
-            display: flex;
+      align-items: center;
+    }
 
-            align-items: center;
+    .profile-wrapper {
+      max-width: 420px;
 
-            justify-content: center;
+      margin: auto;
 
-            position: relative;
+      position: relative;
+    }
 
-            overflow: hidden;
+    .profile-wrapper::before {
+      content: "";
 
-            padding-top: 100px;
+      position: absolute;
 
-        }
+      inset: -12px;
 
+      border-radius: 32px;
 
-        .hero::before {
+      border:
+        1px solid
+        rgba(0,229,195,0.25);
 
-            content: "";
+      transform: rotate(-3deg);
+    }
 
-            position: absolute;
+    .profile-image {
+      position: relative;
 
-            width: 500px;
+      aspect-ratio: 1 / 1;
 
-            height: 500px;
+      overflow: hidden;
 
-            background: var(--primary);
+      border-radius: 28px;
 
-            opacity: 0.07;
+      border:
+        1px solid
+        var(--border);
 
-            filter: blur(100px);
+      background:
+        linear-gradient(
+          145deg,
+          #102a43,
+          #06101d
+        );
 
-            border-radius: 50%;
+      box-shadow:
+        0 30px 70px
+        rgba(0,0,0,0.3);
+    }
 
-            top: 20%;
+    .profile-image img {
+      width: 100%;
+      height: 100%;
 
-            left: 10%;
+      object-fit: cover;
+    }
 
-        }
+    .about-content h3 {
+      font-size: 2rem;
 
+      margin-bottom: 12px;
+    }
 
-        .hero-content {
+    .about-content > p {
+      color: var(--muted);
 
-            max-width: 1200px;
+      margin-bottom: 25px;
+    }
 
-            width: 100%;
+    .info-grid {
+      display: grid;
 
-            padding: 0 25px;
+      grid-template-columns:
+        1fr 1fr;
 
-            display: grid;
+      gap: 12px;
+    }
 
-            grid-template-columns:
-                1.2fr 0.8fr;
+    .info-box {
+      padding: 15px;
 
-            gap: 60px;
+      border-radius: 14px;
 
-            align-items: center;
+      border:
+        1px solid
+        var(--border);
 
-        }
+      background:
+        rgba(255,255,255,0.025);
+    }
 
+    .info-box small {
+      display: block;
 
-        .terminal {
+      color: #718096;
 
-            color: var(--green);
+      font-size: 0.68rem;
 
-            font-family: monospace;
+      letter-spacing: 0.12em;
 
-            margin-bottom: 15px;
+      text-transform: uppercase;
+    }
 
-            font-size: 15px;
+    .info-box strong {
+      display: block;
 
-            min-height: 24px;
+      margin-top: 3px;
 
-        }
+      font-size: 0.92rem;
 
+      word-break: break-word;
+    }
 
-        .hero h1 {
+    /* =========================
+       SKILLS
+    ========================= */
 
-            font-size:
-                clamp(45px, 7vw, 80px);
+    .skills-grid {
+      display: grid;
 
-            line-height: 1.05;
+      grid-template-columns:
+        repeat(3, 1fr);
 
-            margin-bottom: 20px;
+      gap: 18px;
+    }
 
-        }
+    .skill-card {
+      padding: 27px;
 
+      border:
+        1px solid
+        var(--border);
 
-        .hero h1 span {
+      border-radius: 18px;
 
-            color: var(--primary);
+      background:
+        rgba(255,255,255,0.025);
 
-        }
+      transition: 0.3s;
+    }
 
+    .skill-card:hover {
+      transform: translateY(-6px);
 
-        .hero h3 {
+      border-color:
+        rgba(0,229,195,0.35);
 
-            font-size: 23px;
+      background:
+        rgba(0,229,195,0.035);
+    }
 
-            color: #cbd5e1;
+    .skill-icon {
+      font-size: 1.8rem;
 
-            margin-bottom: 20px;
+      margin-bottom: 10px;
+    }
 
-            font-weight: 400;
+    .skill-card h3 {
+      margin-bottom: 7px;
 
-        }
+      font-size: 1.08rem;
+    }
 
+    .skill-card p {
+      color: var(--muted);
 
-        .hero p {
+      font-size: 0.9rem;
+    }
 
-            color: var(--muted);
+    /* =========================
+       EXPERIENCE
+    ========================= */
 
-            max-width: 650px;
+    .timeline {
+      max-width: 950px;
 
-            margin-bottom: 30px;
+      margin: auto;
 
-        }
+      position: relative;
+    }
 
+    .timeline::before {
+      content: "";
 
-        .buttons {
+      position: absolute;
 
-            display: flex;
+      left: 10px;
 
-            gap: 15px;
+      top: 8px;
 
-            flex-wrap: wrap;
+      bottom: 8px;
 
-        }
+      width: 2px;
 
+      background:
+        var(--border);
+    }
 
-        .btn {
+    .timeline-item {
+      position: relative;
 
-            display: inline-block;
+      padding-left: 46px;
 
-            padding: 13px 25px;
+      margin-bottom: 30px;
+    }
 
-            border-radius: 7px;
+    .timeline-dot {
+      position: absolute;
 
-            font-weight: 600;
+      left: 0;
 
-            border:
-                1px solid var(--primary);
+      top: 7px;
 
-            transition: 0.3s;
+      width: 22px;
+      height: 22px;
 
-        }
+      border-radius: 50%;
 
+      background:
+        var(--primary);
 
-        .btn-primary {
+      box-shadow:
+        0 0 0 7px
+        rgba(0,229,195,0.08);
+    }
 
-            background: var(--primary);
+    .experience-card {
+      padding: 30px;
 
-            color: #001219;
+      border-radius: 20px;
 
-        }
+      border:
+        1px solid
+        var(--border);
 
+      background:
+        var(--card);
+    }
 
-        .btn-primary:hover {
+    .experience-card h3 {
+      font-size: 1.35rem;
+    }
 
-            background: transparent;
+    .company {
+      color: var(--primary);
 
-            color: var(--primary);
+      font-weight: 800;
+    }
 
-        }
+    .date {
+      display: inline-block;
 
+      color: #8192a7;
 
-        .btn-outline {
+      font-size: 0.85rem;
 
-            color: var(--primary);
+      margin: 5px 0 15px;
+    }
 
-        }
+    .experience-card ul {
+      padding-left: 20px;
 
+      color: var(--muted);
+    }
 
-        .btn-outline:hover {
+    .experience-card li {
+      margin: 6px 0;
+    }
 
-            background: var(--primary);
+    /* =========================
+       TECHNOLOGY
+    ========================= */
 
-            color: #001219;
+    .technology-list {
+      display: flex;
 
-        }
+      flex-wrap: wrap;
 
+      justify-content: center;
 
-        /* =====================================================
-           TERMINAL WINDOW
-        ===================================================== */
+      gap: 10px;
 
-        .terminal-window {
+      max-width: 1000px;
 
-            background: #0b1018;
+      margin: auto;
+    }
 
-            border:
-                1px solid var(--border);
+    .technology {
+      padding: 10px 15px;
 
-            border-radius: 12px;
+      border-radius: 999px;
 
-            overflow: hidden;
+      border:
+        1px solid
+        var(--border);
 
-            box-shadow:
-                0 25px 80px rgba(0, 0, 0, 0.5);
+      background:
+        rgba(255,255,255,0.035);
 
-        }
+      color: #cbd5e1;
 
+      font-size: 0.88rem;
 
-        .terminal-header {
+      transition: 0.25s;
+    }
 
-            height: 40px;
+    .technology:hover {
+      color: var(--primary);
 
-            background: #151b26;
+      border-color:
+        rgba(0,229,195,0.4);
 
-            display: flex;
+      transform: translateY(-2px);
+    }
 
-            align-items: center;
+    /* =========================
+       STATS
+    ========================= */
 
-            gap: 7px;
+    .stats-grid {
+      display: grid;
 
-            padding: 0 15px;
+      grid-template-columns:
+        repeat(4, 1fr);
 
-        }
+      gap: 16px;
+    }
 
+    .stat-card {
+      text-align: center;
 
-        .dot {
+      padding: 32px 15px;
 
-            width: 11px;
+      border:
+        1px solid
+        var(--border);
 
-            height: 11px;
+      border-radius: 18px;
 
-            border-radius: 50%;
+      background:
+        rgba(255,255,255,0.025);
+    }
 
-            background: #64748b;
+    .stat-card strong {
+      display: block;
 
-        }
+      font-size: 2.5rem;
 
+      color: var(--primary);
 
-        .terminal-body {
+      line-height: 1;
+    }
 
-            padding: 25px;
+    .stat-card span {
+      display: block;
 
-            font-family: monospace;
+      color: var(--muted);
 
-            color: #cbd5e1;
+      margin-top: 10px;
 
-            min-height: 330px;
+      font-size: 0.85rem;
+    }
 
-        }
+    /* =========================
+       CONTACT
+    ========================= */
 
+    .contact-grid {
+      display: grid;
 
-        .terminal-body p {
+      grid-template-columns:
+        0.85fr
+        1.15fr;
 
-            margin-bottom: 12px;
+      gap: 25px;
+    }
 
-        }
+    .contact-card {
+      padding: 30px;
 
+      border-radius: 20px;
 
-        .command {
+      border:
+        1px solid
+        var(--border);
 
-            color: var(--green);
+      background:
+        var(--card);
+    }
 
-        }
+    .contact-card h3 {
+      font-size: 1.45rem;
 
+      margin-bottom: 18px;
+    }
 
-        .output {
+    .contact-list {
+      display: grid;
 
-            color: #94a3b8;
+      gap: 13px;
+    }
 
-        }
+    .contact-item {
+      padding: 16px;
 
+      border:
+        1px solid
+        var(--border);
 
-        /* =====================================================
-           ABOUT
-        ===================================================== */
+      border-radius: 14px;
 
-        .about-grid {
+      background:
+        rgba(255,255,255,0.025);
+    }
 
-            display: grid;
+    .contact-item small {
+      display: block;
 
-            grid-template-columns:
-                0.8fr 1.2fr;
+      color: #718096;
 
-            gap: 50px;
+      font-size: 0.68rem;
 
-            align-items: center;
+      letter-spacing: 0.12em;
 
-        }
+      text-transform: uppercase;
+    }
 
+    .contact-item a {
+      color: #dce7f5;
+    }
 
-        .profile-box {
+    .contact-item a:hover {
+      color: var(--primary);
+    }
 
-            background: var(--card);
+    form {
+      display: grid;
 
-            border:
-                1px solid var(--border);
+      gap: 14px;
+    }
 
-            border-radius: 15px;
+    .form-row {
+      display: grid;
 
-            padding: 35px;
+      grid-template-columns:
+        1fr 1fr;
 
-            text-align: center;
+      gap: 14px;
+    }
 
-            transition: 0.3s;
+    input,
+    textarea {
+      width: 100%;
 
-        }
+      padding: 14px 15px;
 
+      border-radius: 13px;
 
-        .profile-box:hover {
+      border:
+        1px solid
+        var(--border);
 
-            transform: translateY(-5px);
+      background: #07111d;
 
-            border-color:
-                var(--primary);
+      color: white;
 
-            box-shadow:
-                0 15px 40px
-                rgba(0, 217, 255, 0.08);
+      font: inherit;
 
-        }
+      outline: none;
+    }
 
+    input:focus,
+    textarea:focus {
+      border-color:
+        rgba(0,229,195,0.55);
 
-        /* =====================================================
-           YOUR PHOTO
-        ===================================================== */
+      box-shadow:
+        0 0 0 3px
+        rgba(0,229,195,0.08);
+    }
 
-        .profile-icon {
+    textarea {
+      min-height: 150px;
 
-            width: 150px;
+      resize: vertical;
+    }
 
-            height: 150px;
+    .form-note {
+      color: #718096;
 
-            border-radius: 50%;
+      font-size: 0.8rem;
+    }
 
-            margin:
-                auto auto 20px;
+    /* =========================
+       FOOTER
+    ========================= */
 
-            padding: 5px;
+    footer {
+      padding: 30px 0;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #00d9ff,
-                    #0066ff
-                );
+      text-align: center;
 
-            overflow: hidden;
+      border-top:
+        1px solid
+        var(--border);
 
-            box-shadow:
-                0 10px 35px
-                rgba(0, 217, 255, 0.30);
+      color: #718096;
 
-        }
+      font-size: 0.84rem;
+    }
 
+    /* =========================
+       RESPONSIVE
+    ========================= */
 
-        .profile-icon img {
+    @media (max-width: 900px) {
 
-            width: 100%;
+      .menu-btn {
+        display: block;
+      }
 
-            height: 100%;
+      .nav-links {
+        display: none;
 
-            object-fit: cover;
+        position: absolute;
 
-            object-position: center;
+        top: 75px;
 
-            display: block;
+        left: 0;
 
-            border-radius: 50%;
+        width: 100%;
 
-            border:
-                4px solid var(--card);
+        padding: 12px;
 
-        }
+        flex-direction: column;
 
+        background:
+          #050b14;
 
-        .profile-box h3 {
+        border-bottom:
+          1px solid
+          var(--border);
+      }
 
-            font-size: 25px;
+      .nav-links.active {
+        display: flex;
+      }
 
-        }
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
 
+      .terminal {
+        max-width: 700px;
 
-        .profile-box p {
+        margin: auto;
+      }
 
-            color: var(--muted);
+      .skills-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
 
-        }
+      .stats-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+    }
 
+    @media (max-width: 600px) {
 
-        .about-text h3 {
+      .section {
+        padding: 75px 0;
+      }
 
-            font-size: 30px;
+      .hero h1 {
+        font-size: 3.3rem;
+      }
 
-            margin-bottom: 20px;
+      .skills-grid,
+      .info-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
 
-        }
+      .stats-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
 
-
-        .about-text p {
-
-            color: var(--muted);
-
-            margin-bottom: 25px;
-
-        }
-
-
-        .info-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 15px;
-
-        }
-
-
-        .info {
-
-            padding: 15px;
-
-            background: var(--card);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 8px;
-
-        }
-
-
-        .info strong {
-
-            display: block;
-
-            color: var(--primary);
-
-            font-size: 13px;
-
-            margin-bottom: 3px;
-
-        }
-
-
-        /* =====================================================
-           SKILLS
-        ===================================================== */
-
-        .skills-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-
-        }
-
-
-        .skill-card {
-
-            background: var(--card);
-
-            border:
-                1px solid var(--border);
-
-            padding: 28px;
-
-            border-radius: 12px;
-
-            transition: 0.3s;
-
-        }
-
-
-        .skill-card:hover {
-
-            transform: translateY(-6px);
-
-            border-color:
-                var(--primary);
-
-            box-shadow:
-                0 15px 35px
-                rgba(0, 217, 255, 0.08);
-
-        }
-
-
-        .skill-icon {
-
-            font-size: 35px;
-
-            margin-bottom: 15px;
-
-        }
-
-
-        .skill-card h3 {
-
-            margin-bottom: 10px;
-
-        }
-
-
-        .skill-card p {
-
-            color: var(--muted);
-
-            font-size: 14px;
-
-        }
-
-
-        /* =====================================================
-           EXPERIENCE
-        ===================================================== */
-
-        .timeline {
-
-            position: relative;
-
-            max-width: 900px;
-
-            margin: auto;
-
-        }
-
-
-        .timeline::before {
-
-            content: "";
-
-            position: absolute;
-
-            left: 12px;
-
-            top: 0;
-
-            width: 2px;
-
-            height: 100%;
-
-            background: var(--border);
-
-        }
-
-
-        .timeline-item {
-
-            position: relative;
-
-            padding-left: 50px;
-
-            margin-bottom: 45px;
-
-        }
-
-
-        .timeline-dot {
-
-            position: absolute;
-
-            left: 5px;
-
-            top: 5px;
-
-            width: 16px;
-
-            height: 16px;
-
-            background: var(--primary);
-
-            border-radius: 50%;
-
-            box-shadow:
-                0 0 15px var(--primary);
-
-        }
-
-
-        .timeline-card {
-
-            background: var(--card);
-
-            border:
-                1px solid var(--border);
-
-            padding: 30px;
-
-            border-radius: 12px;
-
-        }
-
-
-        .timeline-card h3 {
-
-            font-size: 22px;
-
-            margin-bottom: 5px;
-
-        }
-
-
-        .timeline-card .company {
-
-            color: var(--primary);
-
-            font-weight: 600;
-
-        }
-
-
-        .timeline-card .date {
-
-            color: var(--muted);
-
-            font-size: 14px;
-
-            margin-bottom: 15px;
-
-        }
-
-
-        .timeline-card ul {
-
-            list-style: disc;
-
-            margin-left: 20px;
-
-            color: #cbd5e1;
-
-        }
-
-
-        .timeline-card li {
-
-            margin-bottom: 7px;
-
-        }
-
-
-        /* =====================================================
-           TECHNOLOGY
-        ===================================================== */
-
-        .tech-list {
-
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 12px;
-
-            max-width: 900px;
-
-            margin: auto;
-
-        }
-
-
-        .tech {
-
-            padding: 10px 18px;
-
-            background: var(--card);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 30px;
-
-            color: #cbd5e1;
-
-            transition: 0.3s;
-
-        }
-
-
-        .tech:hover {
-
-            border-color:
-                var(--primary);
-
-            color: var(--primary);
-
-            transform: translateY(-2px);
-
-        }
-
-
-        /* =====================================================
-           STATS
-        ===================================================== */
-
-        .stats-section {
-
-            max-width: none;
-
-            background: var(--bg-light);
-
-        }
-
-
-        .stats {
-
-            max-width: 1200px;
-
-            margin: auto;
-
-            padding: 0 25px;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 20px;
-
-        }
-
-
-        .stat {
-
-            text-align: center;
-
-            padding: 35px 20px;
-
-            background: var(--card);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 12px;
-
-            transition: 0.3s;
-
-        }
-
-
-        .stat:hover {
-
-            border-color:
-                var(--primary);
-
-            transform:
-                translateY(-5px);
-
-        }
-
-
-        .stat h3 {
-
-            font-size: 42px;
-
-            color: var(--primary);
-
-        }
-
-
-        .stat p {
-
-            color: var(--muted);
-
-        }
-
-
-        /* =====================================================
-           CONTACT
-        ===================================================== */
-
-        .contact-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 30px;
-
-        }
-
-
-        .contact-card {
-
-            background: var(--card);
-
-            border:
-                1px solid var(--border);
-
-            padding: 30px;
-
-            border-radius: 12px;
-
-        }
-
-
-        .contact-card h3 {
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .contact-item {
-
-            display: flex;
-
-            gap: 15px;
-
-            padding: 15px 0;
-
-            border-bottom:
-                1px solid var(--border);
-
-        }
-
-
-        .contact-item:last-child {
-
-            border-bottom: none;
-
-        }
-
-
-        .contact-item .icon {
-
-            color: var(--primary);
-
-            font-size: 20px;
-
-            min-width: 25px;
-
-        }
-
-
-        .contact-item span {
-
-            display: block;
-
-            color: var(--muted);
-
-            font-size: 13px;
-
-        }
-
-
-        .contact-item a:hover {
-
-            color: var(--primary);
-
-        }
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-
-            border-top:
-                1px solid var(--border);
-
-            padding: 30px 20px;
-
-            text-align: center;
-
-            color: var(--muted);
-
-        }
-
-
-        footer strong {
-
-            color: var(--primary);
-
-        }
-
-
-        /* =====================================================
-           RESPONSIVE - TABLET
-        ===================================================== */
-
-        @media (max-width: 900px) {
-
-            .hero-content,
-            .about-grid,
-            .contact-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .skills-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-            }
-
-
-            .stats {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-            }
-
-
-            .hero {
-
-                padding-top: 130px;
-
-            }
-
-
-            .terminal-window {
-
-                max-width: 700px;
-
-                width: 100%;
-
-                margin: auto;
-
-            }
-
-        }
-
-
-        /* =====================================================
-           RESPONSIVE - MOBILE
-        ===================================================== */
-
-        @media (max-width: 650px) {
-
-            .nav-links {
-
-                display: none;
-
-                position: absolute;
-
-                top: 75px;
-
-                left: 0;
-
-                width: 100%;
-
-                background: #0b1018;
-
-                flex-direction: column;
-
-                padding: 25px;
-
-                gap: 20px;
-
-                border-bottom:
-                    1px solid var(--border);
-
-            }
-
-
-            .nav-links.active {
-
-                display: flex;
-
-            }
-
-
-            .menu-btn {
-
-                display: block;
-
-            }
-
-
-            .skills-grid,
-            .stats {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .info-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .section-title h2 {
-
-                font-size: 30px;
-
-            }
-
-
-            .hero h1 {
-
-                font-size: 48px;
-
-            }
-
-
-            .hero h3 {
-
-                font-size: 20px;
-
-            }
-
-
-            .profile-icon {
-
-                width: 135px;
-
-                height: 135px;
-
-            }
-
-
-            .timeline-item {
-
-                padding-left: 40px;
-
-            }
-
-
-            .timeline-card {
-
-                padding: 22px;
-
-            }
-
-        }
-
-    </style>
-
+      .experience-card,
+      .contact-card {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- =========================
+       NAVBAR
+  ========================= -->
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+  <header class="navbar">
 
-<header>
+    <div class="container nav-container">
 
-    <nav class="navbar">
+      <a href="#home" class="logo">
 
-        <a href="#home" class="logo">
-            Profile<span>.</span>
-        </a>
+        <div class="logo-box">
+          AK
+        </div>
+
+        <div>
+          Arun <span>Kumar J</span>
+        </div>
+
+      </a>
+
+      <button
+        class="menu-btn"
+        onclick="toggleMenu()"
+        aria-label="Open menu">
+        ☰
+      </button>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="#home">Home</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+          <a href="#experience">Experience</a>
+        </li>
+
+        <li>
+          <a href="#technology">Technology</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </header>
 
 
-        <div
-            class="menu-btn"
-            onclick="toggleMenu()">
+  <!-- =========================
+       HERO
+  ========================= -->
 
-            ☰
+  <section id="home" class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <span class="eyebrow">
+          Linux Production Support
+        </span>
+
+        <h1>
+          Arun Kumar
+          <span>J</span>
+        </h1>
+
+        <div class="hero-role">
+          Linux Administrator | DevOps | Production Support
+        </div>
+
+        <p class="hero-description">
+          Linux Administrator with 4+ years of experience in
+          production support, server administration,
+          application deployment, troubleshooting,
+          monitoring, database administration and
+          infrastructure operations.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="#contact"
+            class="btn btn-primary">
+            Contact Me →
+          </a>
+
+          <a
+            href="assets/Arunkumarj_Linux_Resume.pdf"
+            class="btn btn-secondary"
+            download>
+            Download Resume ↓
+          </a>
 
         </div>
 
+        <ul class="social-links">
 
-        <ul
-            class="nav-links"
-            id="navLinks">
+          <li>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank">
+              in
+            </a>
+          </li>
 
-            <li>
-                <a href="#home">
-                    Home
-                </a>
-            </li>
+          <li>
+            <a
+              href="https://github.com/"
+              target="_blank">
+              GH
+            </a>
+          </li>
 
-            <li>
-                <a href="#about">
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a href="#skills">
-                    Skills
-                </a>
-            </li>
-
-            <li>
-                <a href="#experience">
-                    Experience
-                </a>
-            </li>
-
-            <li>
-                <a href="#technology">
-                    Technology
-                </a>
-            </li>
-
-            <li>
-                <a href="#contact">
-                    Contact
-                </a>
-            </li>
+          <li>
+            <a
+              href="mailto:arunkumarjcv@gmail.com">
+              @
+            </a>
+          </li>
 
         </ul>
 
-    </nav>
-
-</header>
+      </div>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+      <!-- TERMINAL -->
 
-<section
-    class="hero"
-    id="home">
+      <div class="terminal">
 
-    <div class="hero-content">
+        <div class="terminal-header">
 
-
-        <div>
-
-            <div class="terminal">
-                $ whoami
-            </div>
-
-
-            <h1>
-
-                Arun Kumar
-                <span>J</span>
-
-            </h1>
-
-
-            <h3>
-
-                Linux Production Support Engineer
-
-            </h3>
-
-
-            <p>
-
-                Linux Administrator with 4+ years of
-                experience in production support,
-                server administration, application
-                deployment, troubleshooting,
-                monitoring and database administration.
-
-            </p>
-
-
-            <div class="buttons">
-
-                <a
-                    href="#contact"
-                    class="btn btn-primary">
-
-                    Contact Me
-
-                </a>
-
-
-                <a
-                    href="assets/Arunkumarj_Linux_Resume.pdf"
-                    class="btn btn-outline"
-                    download>
-
-                    Download Resume
-
-                </a>
-
-            </div>
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
 
         </div>
 
+        <div class="terminal-body">
 
-        <!-- TERMINAL -->
+          <div class="terminal-line">
 
-        <div class="terminal-window">
+            <span class="terminal-prompt">
+              arun@linux-server
+            </span>:~$
 
-            <div class="terminal-header">
-
-                <span class="dot"></span>
-
-                <span class="dot"></span>
-
-                <span class="dot"></span>
-
-            </div>
-
-
-            <div class="terminal-body">
-
-
-                <p>
-
-                    <span class="command">
-                        $
-                    </span>
-
-                    hostname
-
-                </p>
-
-
-                <p class="output">
-
-                    linux-production-server
-
-                </p>
-
-
-                <p>
-
-                    <span class="command">
-                        $
-                    </span>
-
-                    uptime
-
-                </p>
-
-
-                <p class="output">
-
-                    4+ years production experience
-
-                </p>
-
-
-                <p>
-
-                    <span class="command">
-                        $
-                    </span>
-
-                    skills
-
-                </p>
-
-
-                <p class="output">
-
-                    Linux | Apache | Tomcat | MySQL
-
-                </p>
-
-
-                <p class="output">
-
-                    HAProxy | Nginx | Redis | RabbitMQ
-
-                </p>
-
-
-                <p class="output">
-
-                    Zabbix | Shell Scripting | SSL/TLS
-
-                </p>
-
-
-                <p>
-
-                    <span class="command">
-                        $
-                    </span>
-
-                    status
-
-                </p>
-
-
-                <p class="output">
-
-                    <span style="color:#22c55e;">
-
-                        ● SYSTEM READY
-
-                    </span>
-
-                </p>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section id="about">
-
-
-    <div class="section-title">
-
-        <h2>
-
-            About
-            <span class="accent">
-                Me
+            <span class="terminal-command">
+              whoami
             </span>
 
-        </h2>
+          </div>
 
+          <div class="terminal-line">
+            Linux Production Support Engineer
+          </div>
 
-        <p>
+          <div class="terminal-line">
 
-            Linux Administration &
-            Production Support
+            <span class="terminal-prompt">
+              arun@linux-server
+            </span>:~$
 
-        </p>
+            <span class="terminal-command">
+              skills
+            </span>
+
+          </div>
+
+          <div class="terminal-line">
+            Linux | Apache | Tomcat | MySQL
+          </div>
+
+          <div class="terminal-line">
+            HAProxy | Nginx | Redis | RabbitMQ
+          </div>
+
+          <div class="terminal-line">
+            Zabbix | Shell | SSL/TLS | JKS
+          </div>
+
+          <div class="terminal-line">
+
+            <span class="terminal-prompt">
+              arun@linux-server
+            </span>:~$
+
+            <span class="terminal-command">
+              uptime
+            </span>
+
+          </div>
+
+          <div class="terminal-line">
+            4+ years production experience
+          </div>
+
+          <div class="terminal-status">
+            ● SYSTEM READY
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
-
-    <div class="about-grid">
-
-
-        <!-- PROFILE -->
-
-        <div class="profile-box">
+  </section>
 
 
-            <div class="profile-icon">
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
-                <!-- YOUR PHOTO -->
+  <section id="about" class="section">
 
-                <img
-                    src="assets/img/about/about-1.jpg"
-                    alt="Arun Kumar J">
+    <div class="container">
 
-            </div>
+      <div class="section-header">
+
+        <span class="eyebrow">
+          About Me
+        </span>
+
+        <h2>
+          Building stable & reliable
+          Linux infrastructure.
+        </h2>
+
+        <p>
+          Production-focused Linux administration
+          and application support.
+        </p>
+
+      </div>
 
 
-            <h3>
+      <div class="about-grid">
 
-                Arun Kumar J
+        <!-- PHOTO -->
 
-            </h3>
+        <div class="profile-wrapper">
 
+          <div class="profile-image">
 
-            <p>
+            <img
+              src="assets/img/about/about-1.jpg"
+              alt="Arun Kumar J - Linux Production Support Engineer">
 
-                Linux Production Support Engineer
-
-            </p>
-
+          </div>
 
         </div>
 
 
         <!-- ABOUT CONTENT -->
 
-        <div class="about-text">
+        <div class="about-content">
+
+          <h3>
+            Hi, I'm Arun 👋
+          </h3>
+
+          <p>
+            Linux Administrator with 4+ years of
+            production experience working with Linux
+            servers, application servers, databases,
+            monitoring systems and infrastructure
+            technologies.
+
+            Experienced in server installation,
+            configuration, deployment,
+            troubleshooting, release support,
+            SSL certificate management,
+            database administration and
+            shell scripting.
+          </p>
 
 
-            <h3>
+          <div class="info-grid">
 
-                Building stable and reliable
+            <div class="info-box">
 
-                <span class="accent">
+              <small>
+                Name
+              </small>
 
-                    Linux infrastructure.
-
-                </span>
-
-            </h3>
-
-
-            <p>
-
-                I am a Linux Administrator with
-                4+ years of experience working in
-                production support environments.
-                My experience includes Linux server
-                installation, configuration,
-                application deployment,
-                troubleshooting, monitoring and
-                database administration.
-
-            </p>
-
-
-            <p>
-
-                I work with Linux distributions
-                including RHEL, CentOS, Ubuntu
-                and Debian, along with Apache,
-                Tomcat, MySQL, HAProxy, Nginx,
-                Redis, RabbitMQ and Zabbix.
-
-            </p>
-
-
-            <div class="info-grid">
-
-
-                <div class="info">
-
-                    <strong>
-                        EXPERIENCE
-                    </strong>
-
-                    4+ Years
-
-                </div>
-
-
-                <div class="info">
-
-                    <strong>
-                        ROLE
-                    </strong>
-
-                    Linux Production Support
-
-                </div>
-
-
-                <div class="info">
-
-                    <strong>
-                        LOCATION
-                    </strong>
-
-                    Tamil Nadu, India
-
-                </div>
-
-
-                <div class="info">
-
-                    <strong>
-                        AVAILABILITY
-                    </strong>
-
-                    Available
-
-                </div>
-
+              <strong>
+                Arun Kumar J
+              </strong>
 
             </div>
 
-        </div>
 
-    </div>
+            <div class="info-box">
 
-</section>
-
-
-<!-- =====================================================
-     SKILLS
-===================================================== -->
-
-<section id="skills">
-
-
-    <div class="section-title">
-
-        <h2>
-
-            Professional
-            <span class="accent">
-                Skills
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            Technologies and areas I work with
-
-        </p>
-
-    </div>
-
-
-    <div class="skills-grid">
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                🐧
-            </div>
-
-            <h3>
-                Linux Administration
-            </h3>
-
-            <p>
-
-                RHEL, CentOS, Ubuntu and Debian
-                server installation, configuration
-                and maintenance.
-
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                ⚙️
-            </div>
-
-            <h3>
-                Application Deployment
-            </h3>
-
-            <p>
-
-                Apache and Tomcat administration
-                with JAR, WAR and class-file
-                deployments.
-
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                🗄️
-            </div>
-
-            <h3>
-                MySQL Administration
-            </h3>
-
-            <p>
-
-                Installation, configuration,
-                users, permissions, backup
-                and troubleshooting.
-
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                📊
-            </div>
-
-            <h3>
-                Monitoring
-            </h3>
-
-            <p>
-
-                Zabbix monitoring, CPU and disk I/O
-                analysis and application log monitoring.
-
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                🔐
-            </div>
-
-            <h3>
-                Security
-            </h3>
-
-            <p>
-
-                SSL/TLS certificates, JKS,
-                CSR generation and certificate
-                management.
-
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                🚀
-            </div>
-
-            <h3>
-                Automation
-            </h3>
-
-            <p>
-
-                Bash/Shell scripting and automation
-                of routine production administration
-                tasks.
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     EXPERIENCE
-===================================================== -->
-
-<section id="experience">
-
-
-    <div class="section-title">
-
-        <h2>
-
-            Work
-            <span class="accent">
+              <small>
                 Experience
-            </span>
+              </small>
 
-        </h2>
+              <strong>
+                4+ Years
+              </strong>
+
+            </div>
 
 
-        <p>
+            <div class="info-box">
 
-            Production support experience
+              <small>
+                Role
+              </small>
 
-        </p>
+              <strong>
+                Linux Production Support
+              </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+              <small>
+                Location
+              </small>
+
+              <strong>
+                Tamil Nadu, India
+              </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+              <small>
+                Email
+              </small>
+
+              <strong>
+                arunkumarjcv@gmail.com
+              </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+              <small>
+                Availability
+              </small>
+
+              <strong>
+                Available
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
+  </section>
 
-    <div class="timeline">
+
+  <!-- =========================
+       SKILLS
+  ========================= -->
+
+  <section id="skills" class="section">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="eyebrow">
+          Core Skills
+        </span>
+
+        <h2>
+          What I Do
+        </h2>
+
+        <p>
+          Production-focused infrastructure,
+          Linux administration and application support.
+        </p>
+
+      </div>
+
+
+      <div class="skills-grid">
+
+        <article class="skill-card">
+
+          <div class="skill-icon">
+            🐧
+          </div>
+
+          <h3>
+            Linux Administration
+          </h3>
+
+          <p>
+            RHEL, CentOS, Ubuntu and Debian
+            server installation, configuration,
+            maintenance and troubleshooting.
+          </p>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <div class="skill-icon">
+            ⚙️
+          </div>
+
+          <h3>
+            Application Deployment
+          </h3>
+
+          <p>
+            Apache, Tomcat, JAR, WAR and
+            class-file deployments in
+            production environments.
+          </p>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <div class="skill-icon">
+            🗄️
+          </div>
+
+          <h3>
+            MySQL Administration
+          </h3>
+
+          <p>
+            Installation, configuration,
+            users, permissions, backups
+            and troubleshooting.
+          </p>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <div class="skill-icon">
+            📊
+          </div>
+
+          <h3>
+            Monitoring
+          </h3>
+
+          <p>
+            Zabbix monitoring, system health,
+            application logs and production
+            issue analysis.
+          </p>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <div class="skill-icon">
+            🔐
+          </div>
+
+          <h3>
+            Security & SSL
+          </h3>
+
+          <p>
+            SSL/TLS certificates, CSR,
+            JKS, Tomcat SSL and certificate
+            management.
+          </p>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <div class="skill-icon">
+            ⌨️
+          </div>
+
+          <h3>
+            Shell Automation
+          </h3>
+
+          <p>
+            Bash and Shell scripting for
+            server operations, services
+            and database backups.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EXPERIENCE
+  ========================= -->
+
+  <section id="experience" class="section">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="eyebrow">
+          Career
+        </span>
+
+        <h2>
+          Professional Experience
+        </h2>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <article class="experience-card">
+
+            <h3>
+              Linux Production Support
+            </h3>
+
+            <div class="company">
+              OASYS Cybernetics Pvt. Ltd.
+            </div>
+
+            <span class="date">
+              April 2022 – Present
+            </span>
+
+            <ul>
+
+              <li>
+                Provide daily production support
+                and troubleshoot hardware,
+                software and operational issues.
+              </li>
+
+              <li>
+                Monitor and resolve L2 tickets
+                and production support requests.
+              </li>
+
+              <li>
+                Install and configure Linux servers.
+              </li>
+
+              <li>
+                Participate in Linux-based
+                release and upgrade activities.
+              </li>
+
+              <li>
+                Install and configure Apache
+                and Tomcat servers.
+              </li>
+
+              <li>
+                Perform JAR, WAR and class-file
+                deployments.
+              </li>
+
+              <li>
+                Analyze application server logs
+                and troubleshoot application issues.
+              </li>
+
+              <li>
+                Configure Redis, RabbitMQ
+                and MySQL application properties.
+              </li>
+
+              <li>
+                Upgrade Tomcat versions 7, 8,
+                9 and 10.
+              </li>
+
+              <li>
+                Configure Java heap memory.
+              </li>
+
+              <li>
+                Configure HAProxy and Nginx.
+              </li>
+
+              <li>
+                Manage SSL/TLS certificates,
+                JKS and CSR generation.
+              </li>
+
+              <li>
+                Install and administer MySQL.
+              </li>
+
+              <li>
+                Create Shell scripts for
+                database backups.
+              </li>
+
+            </ul>
+
+          </article>
+
+        </div>
 
 
         <div class="timeline-item">
 
+          <div class="timeline-dot"></div>
 
-            <div class="timeline-dot"></div>
+          <article class="experience-card">
 
+            <h3>
+              Diploma in Electrical &
+              Electronics Engineering
+            </h3>
 
-            <div class="timeline-card">
-
-
-                <h3>
-
-                    Linux Production Support
-
-                </h3>
-
-
-                <div class="company">
-
-                    OASYS Cybernetics Pvt. Ltd.,
-                    Chennai
-
-                </div>
-
-
-                <div class="date">
-
-                    April 2022 - Present
-
-                </div>
-
-
-                <ul>
-
-
-                    <li>
-
-                        Provide daily production support
-                        and troubleshooting for hardware,
-                        software and operational issues.
-
-                    </li>
-
-
-                    <li>
-
-                        Monitor and resolve L2 tickets
-                        and support requests.
-
-                    </li>
-
-
-                    <li>
-
-                        Install and configure Linux servers.
-
-                    </li>
-
-
-                    <li>
-
-                        Participate in Linux-based release
-                        and upgrade activities.
-
-                    </li>
-
-
-                    <li>
-
-                        Install and configure Apache
-                        and Tomcat servers.
-
-                    </li>
-
-
-                    <li>
-
-                        Perform JAR, WAR and class-file
-                        deployments.
-
-                    </li>
-
-
-                    <li>
-
-                        Monitor and analyze application
-                        server logs.
-
-                    </li>
-
-
-                    <li>
-
-                        Write Shell scripts to start and
-                        stop Apache Tomcat servers.
-
-                    </li>
-
-
-                    <li>
-
-                        Configure Redis, RabbitMQ and
-                        MySQL in application properties.
-
-                    </li>
-
-
-                    <li>
-
-                        Configure HAProxy, subdomains
-                        and SSL certificates.
-
-                    </li>
-
-
-                    <li>
-
-                        Manage Tomcat SSL including
-                        third-party certificates and JKS.
-
-                    </li>
-
-
-                    <li>
-
-                        Create Shell scripts for daily,
-                        weekly and monthly database backups.
-
-                    </li>
-
-
-                </ul>
-
-
+            <div class="company">
+              Thangam Muthu Polytechnic College
             </div>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     TECHNOLOGY
-===================================================== -->
-
-<section id="technology">
-
-
-    <div class="section-title">
-
-        <h2>
-
-            Technology
-            <span class="accent">
-                Stack
+            <span class="date">
+              2016 – 2019
             </span>
 
-        </h2>
+            <p style="color:var(--muted);">
+              Diploma in Electrical and
+              Electronics Engineering.
+            </p>
 
+          </article>
 
-        <p>
+        </div>
 
-            Tools and technologies
-
-        </p>
+      </div>
 
     </div>
 
+  </section>
 
-    <div class="tech-list">
+
+  <!-- =========================
+       TECHNOLOGY
+  ========================= -->
+
+  <section id="technology" class="section">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="eyebrow">
+          Technology Stack
+        </span>
+
+        <h2>
+          Tools & Technologies
+        </h2>
+
+      </div>
 
 
-        <div class="tech">
-            RHEL
+      <div class="technology-list">
+
+        <span class="technology">RHEL</span>
+        <span class="technology">CentOS</span>
+        <span class="technology">Ubuntu</span>
+        <span class="technology">Debian</span>
+
+        <span class="technology">Linux</span>
+        <span class="technology">Bash</span>
+        <span class="technology">Shell Scripting</span>
+
+        <span class="technology">Apache</span>
+        <span class="technology">Tomcat</span>
+
+        <span class="technology">MySQL</span>
+
+        <span class="technology">HAProxy</span>
+        <span class="technology">Nginx</span>
+
+        <span class="technology">Redis</span>
+        <span class="technology">RabbitMQ</span>
+
+        <span class="technology">Zabbix</span>
+
+        <span class="technology">SSL/TLS</span>
+        <span class="technology">JKS</span>
+        <span class="technology">CSR</span>
+
+        <span class="technology">SSH</span>
+        <span class="technology">SFTP</span>
+        <span class="technology">SCP</span>
+        <span class="technology">FTP</span>
+
+        <span class="technology">Rsync</span>
+        <span class="technology">tar</span>
+        <span class="technology">gzip</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       STATS
+  ========================= -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <span class="eyebrow">
+          Highlights
+        </span>
+
+        <h2>
+          Production Support
+          at a Glance
+        </h2>
+
+      </div>
+
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+
+          <strong>
+            4+
+          </strong>
+
+          <span>
+            Years Experience
+          </span>
+
         </div>
 
-        <div class="tech">
-            CentOS
-        </div>
 
-        <div class="tech">
-            Ubuntu
-        </div>
+        <div class="stat-card">
 
-        <div class="tech">
-            Debian
-        </div>
-
-        <div class="tech">
+          <strong>
             Linux
+          </strong>
+
+          <span>
+            Production Administration
+          </span>
+
         </div>
 
-        <div class="tech">
-            Bash
+
+        <div class="stat-card">
+
+          <strong>
+            L2
+          </strong>
+
+          <span>
+            Production Support
+          </span>
+
         </div>
 
-        <div class="tech">
-            Shell Scripting
+
+        <div class="stat-card">
+
+          <strong>
+            24×7
+          </strong>
+
+          <span>
+            Production Mindset
+          </span>
+
         </div>
 
-        <div class="tech">
-            Apache
-        </div>
-
-        <div class="tech">
-            Tomcat
-        </div>
-
-        <div class="tech">
-            MySQL
-        </div>
-
-        <div class="tech">
-            HAProxy
-        </div>
-
-        <div class="tech">
-            Nginx
-        </div>
-
-        <div class="tech">
-            Redis
-        </div>
-
-        <div class="tech">
-            RabbitMQ
-        </div>
-
-        <div class="tech">
-            Zabbix
-        </div>
-
-        <div class="tech">
-            SSL/TLS
-        </div>
-
-        <div class="tech">
-            JKS
-        </div>
-
-        <div class="tech">
-            CSR
-        </div>
-
-        <div class="tech">
-            SSH
-        </div>
-
-        <div class="tech">
-            SFTP
-        </div>
-
-        <div class="tech">
-            SCP
-        </div>
-
-        <div class="tech">
-            Rsync
-        </div>
-
-        <div class="tech">
-            tar
-        </div>
-
-        <div class="tech">
-            gzip
-        </div>
-
+      </div>
 
     </div>
 
-</section>
+  </section>
 
 
-<!-- =====================================================
-     STATS
-===================================================== -->
+  <!-- =========================
+       CONTACT
+  ========================= -->
 
-<section class="stats-section">
+  <section id="contact" class="section">
 
+    <div class="container">
 
-    <div class="stats">
+      <div class="section-header">
 
-
-        <div class="stat">
-
-            <h3>
-                4+
-            </h3>
-
-            <p>
-                Years Experience
-            </p>
-
-        </div>
-
-
-        <div class="stat">
-
-            <h3>
-                50+
-            </h3>
-
-            <p>
-                Linux Servers
-            </p>
-
-        </div>
-
-
-        <div class="stat">
-
-            <h3>
-                200+
-            </h3>
-
-            <p>
-                Application Deployments
-            </p>
-
-        </div>
-
-
-        <div class="stat">
-
-            <h3>
-                500+
-            </h3>
-
-            <p>
-                Issues Resolved
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section id="contact">
-
-
-    <div class="section-title">
+        <span class="eyebrow">
+          Get In Touch
+        </span>
 
         <h2>
-
-            Get In
-            <span class="accent">
-                Touch
-            </span>
-
+          Let's Connect
         </h2>
 
-
         <p>
-            Let's connect
+          Interested in Linux production support,
+          application support or infrastructure
+          opportunities?
         </p>
 
-    </div>
+      </div>
 
 
-    <div class="contact-grid">
+      <div class="contact-grid">
 
 
         <!-- CONTACT INFORMATION -->
 
         <div class="contact-card">
 
+          <h3>
+            Contact Information
+          </h3>
 
-            <h3>
-                Contact Information
-            </h3>
+          <div class="contact-list">
 
 
             <div class="contact-item">
 
+              <small>
+                Email
+              </small>
 
-                <div class="icon">
-                    ✉
-                </div>
-
-
-                <div>
-
-                    <span>
-                        Email
-                    </span>
-
-
-                    <a
-                        href="mailto:arunkumarjcv@gmail.com">
-
-                        arunkumarjcv@gmail.com
-
-                    </a>
-
-                </div>
-
+              <a href="mailto:arunkumarjcv@gmail.com">
+                arunkumarjcv@gmail.com
+              </a>
 
             </div>
 
 
             <div class="contact-item">
 
+              <small>
+                LinkedIn
+              </small>
 
-                <div class="icon">
-                    ☎
-                </div>
-
-
-                <div>
-
-                    <span>
-                        Phone
-                    </span>
-
-
-                    <a
-                        href="tel:+919080413143">
-
-                        +91 90804 13143
-
-                    </a>
-
-                </div>
-
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank">
+                LinkedIn Profile
+              </a>
 
             </div>
 
 
             <div class="contact-item">
 
+              <small>
+                GitHub
+              </small>
 
-                <div class="icon">
-                    in
-                </div>
-
-
-                <div>
-
-                    <span>
-                        LinkedIn
-                    </span>
-
-
-                    <a
-                        href="https://www.linkedin.com/in/arun-kumar-j-linux-production-support/"
-                        target="_blank">
-
-                        Arun Kumar J
-
-                    </a>
-
-                </div>
-
+              <a
+                href="https://github.com/"
+                target="_blank">
+                GitHub Profile
+              </a>
 
             </div>
 
 
             <div class="contact-item">
 
+              <small>
+                Location
+              </small>
 
-                <div class="icon">
-                    ⌘
-                </div>
-
-
-                <div>
-
-                    <span>
-                        GitHub
-                    </span>
-
-
-                    <a
-                        href="https://github.com/arunkumarj-git"
-                        target="_blank">
-
-                        arunkumarj-git
-
-                    </a>
-
-                </div>
-
+              <span>
+                Tamil Nadu, India
+              </span>
 
             </div>
 
+          </div>
 
         </div>
 
 
-        <!-- SUMMARY -->
+        <!-- EMAIL FORM -->
 
         <div class="contact-card">
 
+          <h3>
+            Send a Message
+          </h3>
 
-            <h3>
-                Professional Summary
-            </h3>
+          <form id="contactForm">
+
+            <div class="form-row">
+
+              <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required>
+
+            </div>
 
 
-            <p
-                style="
-                    color:#94a3b8;
-                    margin-bottom:25px;
-                ">
-
-                Linux Administrator experienced in
-                production support, server administration,
-                application deployment, database
-                administration, monitoring and
-                troubleshooting.
-
-            </p>
+            <input
+              type="text"
+              id="subject"
+              placeholder="Subject"
+              required>
 
 
-            <a
-                href="mailto:arunkumarjcv@gmail.com"
-                class="btn btn-primary">
+            <textarea
+              id="message"
+              placeholder="Your Message"
+              required></textarea>
 
-                Send Email
 
-            </a>
+            <button
+              type="submit"
+              class="btn btn-primary">
 
+              Send via Email →
+
+            </button>
+
+
+            <div class="form-note">
+
+              This form opens your email
+              application with the message prepared.
+
+            </div>
+
+          </form>
 
         </div>
 
+      </div>
 
     </div>
 
-</section>
+  </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
-<footer>
+  <footer>
 
-    <p>
+    <div class="container">
 
-        © 2026
+      © 2026 Arun Kumar J ·
+      Linux Production Support Engineer ·
+      All Rights Reserved.
 
-        <strong>
-            Arun Kumar J
-        </strong>.
+    </div>
 
-        Linux Production Support Engineer.
-
-    </p>
-
-</footer>
+  </footer>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
 
-<script>
-
-
-    /* ===============================
-       MOBILE MENU
-    =============================== */
+  <script>
 
     function toggleMenu() {
 
-        const menu =
-            document.getElementById("navLinks");
-
-        menu.classList.toggle("active");
+      document
+        .querySelector(".nav-links")
+        .classList
+        .toggle("active");
 
     }
 
 
-    /* ===============================
-       CLOSE MOBILE MENU
-       AFTER CLICKING LINK
-    =============================== */
-
     document
-        .querySelectorAll(".nav-links a")
-        .forEach(link => {
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
 
-            link.addEventListener(
-                "click",
-                () => {
+        link.addEventListener("click", () => {
 
-                    document
-                        .getElementById("navLinks")
-                        .classList
-                        .remove("active");
-
-                }
-            );
+          document
+            .querySelector(".nav-links")
+            .classList
+            .remove("active");
 
         });
 
-
-    /* ===============================
-       TERMINAL TYPING EFFECT
-    =============================== */
-
-    const terminalText =
-        document.querySelector(".terminal");
+      });
 
 
-    const text = "$ whoami";
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
 
 
-    let index = 0;
+        const name =
+          document
+            .getElementById("name")
+            .value
+            .trim();
 
 
-    terminalText.textContent = "";
+        const email =
+          document
+            .getElementById("email")
+            .value
+            .trim();
 
 
-    function typeTerminal() {
-
-        if (index < text.length) {
-
-            terminalText.textContent +=
-                text.charAt(index);
-
-            index++;
-
-            setTimeout(
-                typeTerminal,
-                70
-            );
-
-        }
-
-    }
+        const subject =
+          document
+            .getElementById("subject")
+            .value
+            .trim();
 
 
-    typeTerminal();
+        const message =
+          document
+            .getElementById("message")
+            .value
+            .trim();
 
 
-</script>
+        const body =
+          "Name: " +
+          name +
+          "\n\nEmail: " +
+          email +
+          "\n\nMessage:\n" +
+          message;
 
+
+        window.location.href =
+          "mailto:arunkumarjcv@gmail.com" +
+          "?subject=" +
+          encodeURIComponent(subject) +
+          "&body=" +
+          encodeURIComponent(body);
+
+      });
+
+  </script>
 
 </body>
-
 </html>
